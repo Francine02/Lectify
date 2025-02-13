@@ -1,7 +1,25 @@
 @import "tailwindcss";
 
-* {
-    font-family: "Lora", serif;
-    scrollbar-width: thin;         
-    scrollbar-color: #dadada #FF005B;
+@layer base{
+    * {
+        font-family: "Lora", serif;
+        scrollbar-width: thin;
+        scrollbar-color: #ff0059b8 #dadada00;
+    }
+}
+
+@theme {
+    --color-rosa: #FF005B;
+    --color-bege: #F2D3AC;
+    --color-bg-components: #F5F4F4;
+
+    --text-title-phone: 2rem;
+    --text-title-tablet: 2.5rem;
+    --text-title-md: 3rem;
+    --text-title-lg: 3.5rem;
+    --text-title-2x1: 4rem;
+
+    --text-secondary-phone: 0.9rem;
+    --text-secondary-tablet: 1.2rem;
+
 }

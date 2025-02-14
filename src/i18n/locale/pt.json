@@ -1,0 +1,39 @@
+{
+    "hero": {
+        "title": {
+            "start": "Transforme vídeos em aprendizado.",
+            "startLine": "aprendizado.",
+            "summary": "Gere um ",
+            "summaryLine": "resumo",
+            "test": "Teste seu ",
+            "testLine": "conhecimento."
+        },
+        "page1": {
+            "option": "Selecione uma opção:",
+            "summary": "Gere um resumo automático a partir de qualquer vídeo do YouTube.",
+            "quiz": "Responda perguntas e avalie seu entendimento sobre o conteúdo."
+        },
+        "page2": {
+            "url": "Insira a url...",
+            "button": "Gerar",
+            "formate": "Selecione o formato desejado:"
+        },
+        "page3": {
+            "file": "Insira um arquivo para iniciar o quiz:",
+            "addFile": "Click para carregar ou arraste e solte",
+            "button": "Iniciar"
+        },
+        "page4": {
+            "title": "Questão",
+            "next": "Pular",
+            "tip": "Dica"
+        }
+    },
+    "footer": {
+        "info": "Informações:",
+        "docs": "Documentos",
+        "code": "Código",
+        "license": "Todos os direitos reservados.",
+        "develop": "Desenvolvido por:"
+    }
+}

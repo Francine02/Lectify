@@ -1,0 +1,39 @@
+{
+    "hero": {
+        "title": {
+            "start": "Turn videos into ",
+            "startLine": "learning.",
+            "summary": "Generate an automatic summary.",
+            "summaryLine": "summary.",
+            "test": "Test your ",
+            "testLine": "knowledge."
+        },
+        "page1": {
+            "option": "Select an option:",
+            "summary": "Generate an automatic summary from any YouTube video.",
+            "quiz": "Answer questions and assess your understanding of the content."
+        },
+        "page2": {
+            "url": "Enter the url...",
+            "button": "Generate",
+            "formate": "Select the desired format:"
+        },
+        "page3": {
+            "file": "Insert a file to start the quiz:",
+            "addFile": "Click to upload or drag and drop",
+            "button": "Start"
+        },
+        "page4": {
+            "title": "Question",
+            "next": "Next",
+            "tip": "Tip"
+        }
+    },
+    "footer": {
+        "info": "Information:",
+        "docs": "Documents",
+        "code": "Code",
+        "license": "All rights reserved.",
+        "develop": "Developed by:"
+    }
+}

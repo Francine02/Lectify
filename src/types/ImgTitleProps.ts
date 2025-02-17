@@ -1,4 +1,5 @@
 export interface ImagTitleProps {
-    img: string,
+    img?: string,
+    link?: string,
     text: string
 }

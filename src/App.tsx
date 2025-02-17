@@ -1,3 +1,4 @@
+import { Footer } from "./components/footer/Footer"
 import { Hero } from "./components/hero/Hero"
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
       <div className="pt-5 md:pt-7 px-8 sm:px-12 md:px-20 lg:px-24 xl:px-28 2xl:px-36">
         <Hero />
       </div>
+      <Footer />
     </div>
   )
 }

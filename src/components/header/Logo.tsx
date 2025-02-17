@@ -4,7 +4,7 @@ export function Logo() {
     return (
         <>
             <img
-                className='w-24 md:w-32'
+                className='w-24 md:w-28 pt-2'
                 src={logo}
                 alt="Logo escrito: Lectify." />
         </>

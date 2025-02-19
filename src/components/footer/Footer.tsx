@@ -1,9 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Logo } from "../header/Logo";
-import { SelectOption } from "../hero/SelectOption";
+import { SelectOption } from "../home/SelectOption";
 import { Links } from "./Links";
-import github from "../../assets/Icon-github.png";
-import linkedin from "../../assets/Icon-linkedin.png";
 
 export function Footer() {
     const { t } = useTranslation();
@@ -21,10 +19,10 @@ export function Footer() {
 
                 <div>
                     <SelectOption title={t('footer.develop')} />
-                    <Links link="https://github.com/id0ubl3g" img={github} text="George Victor" />
-                    <Links link="https://www.linkedin.com/in/id0ubl3g" img={linkedin} text="George Victor" />
-                    <Links link="https://github.com/Francine02" img={github} text="Francine Cruz" />
-                    <Links link="https://www.linkedin.com/in/francine-ccruz" img={linkedin} text="Francine Cruz" />
+                    <Links link="https://github.com/id0ubl3g" img="/assets/Icon-github.png" text="George Victor" />
+                    <Links link="https://www.linkedin.com/in/id0ubl3g" img="/assets/Icon-linkedin.png" text="George Victor" />
+                    <Links link="https://github.com/Francine02" img="/assets/Icon-github.png" text="Francine Cruz" />
+                    <Links link="https://www.linkedin.com/in/francine-ccruz" img="/assets/Icon-linkedin.png" text="Francine Cruz" />
                 </div>
             </div>
             <p className="text-secondary-phone text-center pb-4 pt-5 border-t border-[#c7c7c7]">© 2025 Lectify. {t('footer.license')}</p>

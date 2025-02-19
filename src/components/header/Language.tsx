@@ -1,6 +1,4 @@
 import { useTranslation } from "react-i18next";
-import en from "../../assets/eua.png";
-import br from "../../assets/brasil.png";
 
 export function Language() {
     const { i18n } = useTranslation();
@@ -15,7 +13,7 @@ export function Language() {
             onClick={toggleLanguage}
             className="relative group cursor-pointer">
             <img
-                src={i18n.language === 'pt' ? en : br}
+                src={i18n.language === 'pt' ? "/assets/eua.png" : "/assets/brasil.png"}
                 alt={i18n.language === 'pt' ? 'English' : 'Português'}
                 className="w-7 md:w-8 hover:opacity-70" />
             <span

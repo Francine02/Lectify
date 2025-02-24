@@ -27,16 +27,18 @@ export function Hero() {
 
             <div className="sm:flex space-x-5 justify-center">
                 <SelectOption title={t('hero.page2.formate')} />
-                <Radio
-                    checked={selectedFormat === "pdf"}
-                    onChange={handleRadioChange}
-                    value="pdf"
-                    text="PDF" />
-                <Radio
-                    checked={selectedFormat === "md"}
-                    onChange={handleRadioChange}
-                    value="md"
-                    text="Markdown" />
+                <div className="flex justify-center gap-5 ">
+                    <Radio
+                        checked={selectedFormat === "pdf"}
+                        onChange={handleRadioChange}
+                        value="pdf"
+                        text="PDF" />
+                    <Radio
+                        checked={selectedFormat === "md"}
+                        onChange={handleRadioChange}
+                        value="md"
+                        text="Markdown" />
+                </div>
             </div>
         </>
     )

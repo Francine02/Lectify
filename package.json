@@ -12,6 +12,7 @@
   "dependencies": {
     "@tailwindcss/postcss": "^4.0.7",
     "@types/node": "^22.13.4",
+    "axios": "^1.8.1",
     "i18next": "^24.2.2",
     "lectify": "file:",
     "next": "^15.1.7",

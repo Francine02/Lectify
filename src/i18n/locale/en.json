@@ -21,7 +21,8 @@
         "page3": {
             "file": "Insert a file to start the quiz:",
             "addFile": "Click to upload or drag and drop",
-            "button": "Start"
+            "button": "Start",
+            "fileIn": "File"
         },
         "page4": {
             "title": "Question",
@@ -35,5 +36,38 @@
         "code": "Code",
         "license": "All rights reserved.",
         "develop": "Developed by:"
+    },
+    "errors": {
+        "typeFile": "File hint not supported. Download PDF or MD files.",
+        "NoDataProvided": "No data provided",
+        "MissingRequiredFields": "Missing required fields",
+        "MissingYouTubeURL": "Missing YouTube URL",
+        "UrlExceedsMaximumLength": "URL exceeds maximum length",
+        "InvalidYoutubeUrl": "Invalid YouTube URL",
+        "UnsupportedFormat": "Invalid format. Supported formats",
+        "MissingLanguageSelection": "Missing language selection",
+        "InvalidLanguage": "Invalid format. Supported formats",
+        "FileNotFound": "File not found",
+        "DocumentConversionError": "Error during document conversion",
+        "OsError": "OS error occurred while handling the file",
+        "DocumentBuildingError": "Error during document building",
+        "ChatGenerationError": "Error during chat generation",
+        "UnableToUnderstandTheAudio": "Unable to understand the audio",
+        "ServiceRequestError": "Error in service request",
+        "AudioRecognitionError": "Error during audio recognition",
+        "DownloadError": "Download error occurred. Please check the URL and your network connection",
+        "NetworkError": "Network error. Please check your internet connection",
+        "AudioDownloadingError": "Error during audio downloading",
+        
+        "NoFileReceived": "No file received",
+        "FileExceedsMaximumLength": "File name exceeds the maximum length of 100 characters",
+        "InvalidFormat": "Invalid format. Supported formats",
+        "SuspiciousFileName": "The filename seems suspicious and contains a blocked extension",
+        "InvalidFileType": "Invalid file type",
+        "ExtractionError": "Error during text extraction from the file",
+        
+        "FileSizeExceeds5MB": "File size exceeds the maximum limit of 5 MB",
+
+        "ProcessingError": "An error occurred while processing the request"
     }
 }

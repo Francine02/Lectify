@@ -13,16 +13,16 @@ export function Footer() {
                 <div>
                     <SelectOption title={t('footer.info')} />
                     <Links text={t('footer.docs')} />
-                    <Links link="https://github.com/id0ubl3g/lectify-flask-api" text={`Frontend ${t('footer.code')}`} />
-                    <Links link="https://github.com/Francine02/Lectify" text={`Backend ${t('footer.code')}`} />
+                    <Links link="https://github.com/Francine02/Lectify" text={`Frontend ${t('footer.code')}`} />
+                    <Links link="https://github.com/id0ubl3g/lectify-flask-api" text={`Backend ${t('footer.code')}`} />
                 </div>
 
                 <div>
                     <SelectOption title={t('footer.develop')} />
-                    <Links link="https://github.com/id0ubl3g" img="/assets/Icon-github.png" text="George Victor" />
-                    <Links link="https://www.linkedin.com/in/id0ubl3g" img="/assets/Icon-linkedin.png" text="George Victor" />
                     <Links link="https://github.com/Francine02" img="/assets/Icon-github.png" text="Francine Cruz" />
                     <Links link="https://www.linkedin.com/in/francine-ccruz" img="/assets/Icon-linkedin.png" text="Francine Cruz" />
+                    <Links link="https://github.com/id0ubl3g" img="/assets/Icon-github.png" text="George Victor" />
+                    <Links link="https://www.linkedin.com/in/id0ubl3g" img="/assets/Icon-linkedin.png" text="George Victor" />
                 </div>
             </div>
             <p className="text-secondary-phone text-center pb-4 pt-5 border-t border-[#c7c7c7]">© 2025 Lectify. {t('footer.license')}</p>

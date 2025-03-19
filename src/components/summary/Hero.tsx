@@ -1,13 +1,12 @@
+import { DataSummarize } from "@/src/types/DataSummarize";
+import { useState } from "react";
+import { FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { Logo } from "../home/Logo";
-import { Title } from "../home/Title";
 import { SelectOption } from "../home/SelectOption";
-import { Radio } from "./Radio";
-import React, { useState } from "react";
+import { Title } from "../home/Title";
 import { InputUrl } from "./InputUrl";
-import { FormProvider, useForm } from "react-hook-form";
-import { DataSummarize } from "@/src/types/DataSummarize";
-import { summaryRequest } from "@/src/service/summaryRequest";
+import { Radio } from "./Radio";
 
 export function Hero() {
     const { t, i18n } = useTranslation();

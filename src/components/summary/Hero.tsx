@@ -5,41 +5,70 @@ import { SelectOption } from "../home/SelectOption";
 import { Radio } from "./Radio";
 import React, { useState } from "react";
 import { InputUrl } from "./InputUrl";
+import { FormProvider, useForm } from "react-hook-form";
+import { DataSummarize } from "@/src/types/DataSummarize";
+import { summaryRequest } from "@/src/service/summaryRequest";
 
 export function Hero() {
     const { t, i18n } = useTranslation();
-    const [selectedFormat, setSelectedFormat] = useState("pdf");
+    const [loading, setLoading] = useState<boolean>(false);
+    const methods = useForm({
+        mode: 'onBlur',
+        defaultValues: {
+            output_format: 'pdf',
+            youtube_url: ''
+        }
+    });
 
-    const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSelectedFormat(e.target.value);
+    const watchFormat = methods.watch('output_format');
+
+    const onSubmit = async (data: DataSummarize) => {
+        setLoading(true);
+        const dataForm = {
+            youtube_url: data.youtube_url,
+            output_format: data.output_format,
+            language_select: i18n.language === 'pt' ? 'pt-BR' : 'en-US'
+        }
+
+        // const result = await summaryRequest(dataForm);
+
+        // if (result.error === "200") {
+        //     console.log(data)
+        //     // router.push('/questions');
+        // }
+        console.log(dataForm)
+
+        setLoading(false);
+
     }
 
     return (
-        <>
+        <FormProvider {...methods}>
             <Logo />
             <Title
                 title={t('hero.title.summary')}
                 emphasis={t('hero.title.summaryLine')}
                 titleContinuation={i18n.language === 'pt' ? " automático." : ""} />
 
-            <InputUrl />
+            <InputUrl loading={loading} onClick={methods.handleSubmit(onSubmit)} />
 
-
-            <div className="sm:flex space-x-5 justify-center">
+            <div className="sm:flex space-x-5 justify-center pt-4">
                 <SelectOption title={t('hero.page2.formate')} />
                 <div className="flex justify-center gap-5 ">
                     <Radio
-                        checked={selectedFormat === "pdf"}
-                        onChange={handleRadioChange}
+                        {...methods.register('output_format')}
+                        checked={watchFormat === 'pdf'}
                         value="pdf"
+                        onChange={(e) => methods.setValue("output_format", e.target.value)}
                         text="PDF" />
                     <Radio
-                        checked={selectedFormat === "md"}
-                        onChange={handleRadioChange}
+                        {...methods.register('output_format')}
+                        checked={watchFormat === 'md'}
+                        onChange={(e) => methods.setValue("output_format", e.target.value)}
                         value="md"
                         text="Markdown" />
                 </div>
             </div>
-        </>
+        </FormProvider>
     )
 }

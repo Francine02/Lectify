@@ -27,7 +27,13 @@
         "page4": {
             "title": "Question",
             "next": "Next",
-            "tip": "Tip"
+            "tip": "Tip",
+            "finish": "Finish",
+            "justification": "Justification"
+        },
+        "page5": {
+            "congratulations": "Congratulations",
+            "points": "You got it right:"
         }
     },
     "footer": {

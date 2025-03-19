@@ -26,8 +26,14 @@
         },
         "page4": {
             "title": "Questão",
-            "next": "Pular",
-            "tip": "Dica"
+            "next": "Avançar",
+            "tip": "Dica",
+            "finish": "Finalizar",
+            "justification": "Justificativa"
+        },
+        "page5": {
+            "congratulations": "Parabéns",
+            "points": "Você acertou:"
         }
     },
     "footer": {

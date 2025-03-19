@@ -1,5 +1,5 @@
 export interface TitleProps {
-    title: string,
+    title?: string,
     emphasis?: string,
     titleContinuation?: string
 }

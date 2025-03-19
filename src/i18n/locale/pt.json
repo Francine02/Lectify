@@ -29,7 +29,9 @@
             "next": "Avançar",
             "tip": "Dica",
             "finish": "Finalizar",
-            "justification": "Justificativa"
+            "justification": "Justificativa",
+            "error": "Erro! Insira um arquivo para iniciar o teste",
+            "back": "Voltar"
         },
         "page5": {
             "congratulations": "Parabéns",

@@ -29,7 +29,9 @@
             "next": "Next",
             "tip": "Tip",
             "finish": "Finish",
-            "justification": "Justification"
+            "justification": "Justification",
+            "error": "Error! Please insert a file to start the test",
+            "back": "Back"
         },
         "page5": {
             "congratulations": "Congratulations",

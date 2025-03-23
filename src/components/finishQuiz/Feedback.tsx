@@ -31,10 +31,10 @@ export function Feedback({ showModal }: { showModal: Dispatch<SetStateAction<boo
 
         try {
             await emailjs.send(
-                import.meta.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-                import.meta.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
                 templateParams,
-                import.meta.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
             setStatus('success');
         } catch (error) {
             setStatus('error');

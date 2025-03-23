@@ -30,17 +30,19 @@
             "tip": "Tip",
             "finish": "Finish",
             "justification": "Justification",
-            "error": "Error! Please insert a file to start the test",
-            "back": "Back"
+            "error": "Error! Please insert a file to start the test"
         },
         "page5": {
             "congratulations": "Congratulations",
-            "points": "You got it right:"
+            "points": "You scored:",
+            "back": "Back",
+            "send": "SEND",
+            "evaluate": "Evaluate"
         }
     },
     "footer": {
         "info": "Information:",
-        "docs": "Documents",
+        "docs": "Leave Feedback",
         "code": "Code",
         "license": "All rights reserved.",
         "develop": "Developed by:"
@@ -66,16 +68,22 @@
         "DownloadError": "Download error occurred. Please check the URL and your network connection",
         "NetworkError": "Network error. Please check your internet connection",
         "AudioDownloadingError": "Error during audio downloading",
-        
         "NoFileReceived": "No file received",
         "FileExceedsMaximumLength": "File name exceeds the maximum length of 100 characters",
         "InvalidFormat": "Invalid format. Supported formats",
         "SuspiciousFileName": "The filename seems suspicious and contains a blocked extension",
         "InvalidFileType": "Invalid file type",
         "ExtractionError": "Error during text extraction from the file",
-        
         "FileSizeExceeds5MB": "File size exceeds the maximum limit of 5 MB",
-
-        "ProcessingError": "An error occurred while processing the request"
+        "ProcessingError": "An error occurred while processing the request",
+        "type": {
+            "required": "Mandatory field!",
+            "onlyLetters": "Only letters are allowed!",
+            "onlyEmail": "Enter a valid email!"
+        }
+    },
+    "contact": {
+        "successMessage": "Message sent successfully! Thanks for the feedback",
+        "errorMessage": "ERROR! Message not sent."
     }
 }

@@ -30,17 +30,19 @@
             "tip": "Dica",
             "finish": "Finalizar",
             "justification": "Justificativa",
-            "error": "Erro! Insira um arquivo para iniciar o teste",
-            "back": "Voltar"
+            "error": "Erro! Insira um arquivo para iniciar o teste"
         },
         "page5": {
             "congratulations": "Parabéns",
-            "points": "Você acertou:"
+            "points": "Você pontuou:",
+            "back": "Voltar",
+            "send": "ENVIAR",
+            "evaluate": "Avaliar"
         }
     },
     "footer": {
         "info": "Informações:",
-        "docs": "Documentos",
+        "docs": "Deixe Feedback",
         "code": "Código",
         "license": "Todos os direitos reservados.",
         "develop": "Desenvolvido por:"
@@ -66,16 +68,22 @@
         "DownloadError": "Ocorreu um erro no download. Verifique a URL e sua conexão de rede",
         "NetworkError": "Erro de rede. Verifique sua conexão com a internet",
         "AudioDownloadingError": "Erro durante o download do áudio",
-        
         "NoFileReceived": "Nenhum arquivo recebido",
         "FileExceedsMaximumLength": "O nome do arquivo excede o limite máximo de 100 caracteres",
         "InvalidFormat": "Formato inválido. Formatos suportados",
         "SuspiciousFileName": "O nome do arquivo parece suspeito e contém uma extensão bloqueada",
         "InvalidFileType": "Tipo de arquivo inválido. Detectado: {detected_mime_type}. Esperado",
         "ExtractionError": "Erro durante a extração de texto do arquivo",
-        
         "FileSizeExceeds5MB": "O tamanho do arquivo excede o limite máximo de 5 MB",
-        
-        "ProcessingError": "Ocorreu um erro ao processar a solicitação"
+        "ProcessingError": "Ocorreu um erro ao processar a solicitação",
+        "type": {
+            "required": "Campo obrigatório!",
+            "onlyLetters": "Somente letras são permitidas!",
+            "onlyEmail": "Insira um email válido!"
+        }
+    },
+    "contact": {
+        "successMessage": "Mensagem enviada com sucesso! Agradecemos pelo feedback",
+        "errorMessage": "ERRO! Mensagem não enviada."
     }
 }

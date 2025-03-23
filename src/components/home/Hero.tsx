@@ -10,7 +10,7 @@ export function Hero() {
     return (
         <>
             <Logo />
-            <Title title={t('hero.title.start')} emphasis={t('hero.title.startLine')} />
+            <Title useSparkles title={t('hero.title.start')} emphasis={t('hero.title.startLine')} />
             <SelectOption title={t('hero.page1.option')} />
 
             <div className="sm:flex gap-5 md:gap-8 lg:gap-10 justify-center">

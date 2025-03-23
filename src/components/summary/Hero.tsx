@@ -45,6 +45,7 @@ export function Hero() {
         <FormProvider {...methods}>
             <Logo />
             <Title
+                useSparkles
                 title={t('hero.title.summary')}
                 emphasis={t('hero.title.summaryLine')}
                 titleContinuation={i18n.language === 'pt' ? " automático." : ""} />

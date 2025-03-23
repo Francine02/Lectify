@@ -39,7 +39,7 @@ export function Hero() {
     return (
         <>
             <Logo />
-            <Title title={t('hero.title.test')} emphasis={t('hero.title.testLine')} />
+            <Title useSparkles title={t('hero.title.test')} emphasis={t('hero.title.testLine')} />
             <SelectOption title={t('hero.page3.file')} />
 
             <Dropzone onFileChange={setFile} />

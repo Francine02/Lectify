@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import { Border } from "../finishQuiz/Border";
 
 export function Dropzone({ onFileChange }: { onFileChange: (file: File) => void }) {
     const { t } = useTranslation();
@@ -42,18 +43,19 @@ export function Dropzone({ onFileChange }: { onFileChange: (file: File) => void 
     }
 
     return (
-        <div className="flex flex-col items-center justify-center py-8">
+        <div className="flex flex-col items-center justify-center py-8 text-center">
             {file ? (
-                <p className="text-[#868686] w-full sm:w-96 overflow-auto p-3 flex justify-center items-center h-20 rounded-lg cursor-pointer bg-bg-components ">
+                <p className="text-[#868686] w-full sm:w-96 overflow-auto p-3 flex justify-center items-center max-h-40 rounded-lg cursor-pointer bg-bg-components ">
                     {t("hero.page3.fileIn")}: <span className="font-semibold"> {file.name}</span>
                 </p>
             ) : (
-                <div className="p-0.5 rounded-3xl bg-gradient-to-t from-rosa via-rosa-secundary to-bege">
+                <div className="rounded-3xl relative overflow-x-clip">
+                    <Border/>
                     <label
                         onDrop={handleDrop}
                         onDragOver={handleDragOver}
                         htmlFor="dropzone-file"
-                        className="flex flex-col items-center justify-center w-full sm:w-[30rem] h-28 border-2 border-dashed border-transparent rounded-3xl cursor-pointer bg-bg-components hover:bg-gray-100 p-6 sm:p-8 md:p-10"
+                        className="flex flex-col items-center justify-center w-full sm:w-[30rem] h-32 sm:h-28 border-2 border-dashed border-transparent rounded-3xl cursor-pointer bg-bg-components hover:bg-gray-100 p-6 sm:p-8 md:p-10"
                     >
                         <div className="flex flex-col items-center justify-center pt-5 pb-6">
                             <img

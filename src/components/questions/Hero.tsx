@@ -36,6 +36,11 @@ export function Hero() {
         }
     }
 
+    const handleFinish = () => {
+        router.push('/finishQuiz');
+        sessionStorage.removeItem('quizData');
+    }
+
     return (
         <>
             {currentQuestion ? (
@@ -47,7 +52,7 @@ export function Hero() {
                     </div>
 
 
-                    <Title emphasis={t('hero.page4.title') + " " + count} />
+                    <Title className="text-3xl sm:text-4xl lg:text-5xl" emphasis={t('hero.page4.title') + " " + count} />
                     <Subtitle title={currentQuestion.pergunta} />
                     {currentQuestion.alternativas.map((a: string, index: any) => {
                         return <Option
@@ -70,8 +75,9 @@ export function Hero() {
                         </Modal>
                     )}
 
-                    <div className="flex justify-center gap-10">
+                    <div className="flex justify-center gap-10 pt-1">
                         <Button
+                        secondary
                             onClick={() =>
                                 setShowModal(true)}
                             loading={false}
@@ -80,7 +86,7 @@ export function Hero() {
                         {count === 5 ? (
                             <Button
                                 disabled={selected.length === 0}
-                                onClick={() => router.push('/finishQuiz')}
+                                onClick={handleFinish}
                                 loading={false}
                                 text={t('hero.page4.finish')} />
                         ) : (

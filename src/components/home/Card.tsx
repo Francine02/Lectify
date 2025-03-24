@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CardProps } from "../../types/ImgTitleProps";
+import { CardProps } from "./CardProps";
 import { Border } from "../animationsMagicUi/Border";
 
 export function Card({ text, img, href }: CardProps) {

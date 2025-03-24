@@ -1,5 +1,5 @@
-import { TitleProps } from "../../types/TitleProps"
-import { SparklesText } from "../magicui/sparkles-text"
+import { TitleProps } from "./TitleProps"
+import { SparklesText } from "../../magicui/sparkles-text"
 
 export function Title({ title, emphasis, titleContinuation, className, useSparkles }: TitleProps) {
     const content = (

@@ -1,7 +1,4 @@
-interface ProgressBarProps {
-    count: number,
-    number: number,
-}
+import { ProgressBarProps } from "./ProgressBarProps";
 
 export function ProgressBar({ count, number }: ProgressBarProps) {
 

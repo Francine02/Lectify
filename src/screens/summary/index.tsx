@@ -1,8 +1,8 @@
 import { LogoPink } from "@/src/components/logos/LogoPink";
-import { InputUrl } from "@/src/components/summary/InputUrl";
-import { Radio } from "@/src/components/summary/Radio";
+import { InputUrl } from "@/src/components/summary/input/InputUrl";
+import { Radio } from "@/src/components/summary/radio/Radio";
 import { Subtitle } from "@/src/components/text/Subtitle";
-import { Title } from "@/src/components/text/Title";
+import { Title } from "@/src/components/text/title/Title";
 import { DataSummarize } from "@/src/types/DataSummarize";
 import { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";

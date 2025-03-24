@@ -1,15 +1,14 @@
-import { useQuizContext } from "@/src/context/QuizContext";
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { Title } from "@/src/components/text/Title";
 import { Button } from "@/src/components/button/Button";
 import { Modal } from "@/src/components/modal/Modal";
-import { Option } from "@/src/components/questions/Option";
-import { ProgressBar } from "@/src/components/questions/ProgressBar";
-import { Subtitle } from "@/src/components/text/Subtitle";
-import { useRouter } from "next/navigation";
-import { Paragraph } from "@/src/components/text/Paragraph";
 import { PageBlank } from "@/src/components/pageBlank/PageBlank";
+import { Option } from "@/src/components/questions/options/Option";
+import { ProgressBar } from "@/src/components/questions/progressBar/ProgressBar";
+import { Paragraph } from "@/src/components/text/Paragraph";
+import { Title } from "@/src/components/text/title/Title";
+import { useQuizContext } from "@/src/context/QuizContext";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export function Hero() {
     const { t } = useTranslation();

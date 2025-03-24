@@ -1,7 +1,7 @@
 import { Card } from "@/src/components/home/Card";
 import { LogoPink } from "@/src/components/logos/LogoPink";
 import { Subtitle } from "@/src/components/text/Subtitle";
-import { Title } from "@/src/components/text/Title";
+import { Title } from "@/src/components/text/title/Title";
 import { useTranslation } from "react-i18next";
 
 export function Hero() {

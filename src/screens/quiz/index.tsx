@@ -2,13 +2,12 @@ import { Button } from "@/src/components/button/Button";
 import { LogoPink } from "@/src/components/logos/LogoPink";
 import { Dropzone } from "@/src/components/quiz/Dropzone";
 import { Subtitle } from "@/src/components/text/Subtitle";
-import { Title } from "@/src/components/text/Title";
+import { Title } from "@/src/components/text/title/Title";
 import { useQuizContext } from "@/src/context/QuizContext";
 import { quizRequest } from "@/src/service/quizRequest";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-
 
 export function Hero() {
     const { t } = useTranslation();

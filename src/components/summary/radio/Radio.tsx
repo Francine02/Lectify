@@ -1,4 +1,4 @@
-import { RadioPros } from "@/src/types/RadioProps";
+import { RadioPros } from "@/src/components/summary/radio/RadioProps";
 
 export function Radio({ value, text, checked, onChange }: RadioPros) {
     return (

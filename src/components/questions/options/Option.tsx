@@ -1,12 +1,5 @@
 import { useTranslation } from "react-i18next";
-
-interface OptionProps {
-    alternative: string,
-    selected: string,
-    onClick: () => void,
-    response: string,
-    justification: string
-}
+import { OptionProps } from "./OptionsProps";
 
 export function Option({ alternative, selected, onClick, response, justification }: OptionProps) {
     const { t } = useTranslation();

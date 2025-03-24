@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { Button } from "../button/Button";
 import { Modal } from "../modal/Modal";
-import { Title } from "../text/Title";
+import { Title } from "../text/title/Title";
 import { Input } from './input/Input';
 import { Error } from '../error/Error';
 import { PageBlank } from '../pageBlank/PageBlank';

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
 import { Confetti, type ConfettiRef } from "../magicui/confetti";
-import { Title } from "../text/Title";
+import { Title } from "../text/title/Title";
 import confetti from "canvas-confetti";
 import { useTranslation } from "react-i18next";
 

@@ -1,10 +1,5 @@
-import { Dispatch, SetStateAction } from "react"
 import { Border } from "../animationsMagicUi/Border"
-
-interface ModalProps {
-    setShowModal: Dispatch<SetStateAction<boolean>>
-    children: React.ReactNode
-}
+import { ModalProps } from "./ModalProps"
 
 export function Modal({ setShowModal, children }: ModalProps) {
     return (

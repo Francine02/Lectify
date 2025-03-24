@@ -1,5 +1,5 @@
 import Head from "next/head"
-import { Hero } from "../screens/finishQuiz"
+import { Hero } from "@/src/screens/finishQuiz"
 
 function FinishQuiz() {
     return (

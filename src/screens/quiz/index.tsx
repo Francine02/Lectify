@@ -1,13 +1,13 @@
-import { useTranslation } from "react-i18next";
-import { Title } from "../home/Title";
-import { SelectOption } from "../home/SelectOption";
-import { Logo } from "../home/Logo";
-import { Dropzone } from "./Dropzone";
-import { Button } from "./Button";
-import { useState } from "react";
+import { Button } from "@/src/components/button/Button";
+import { LogoPink } from "@/src/components/logos/LogoPink";
+import { Dropzone } from "@/src/components/quiz/Dropzone";
+import { Subtitle } from "@/src/components/text/Subtitle";
+import { Title } from "@/src/components/text/Title";
+import { useQuizContext } from "@/src/context/QuizContext";
 import { quizRequest } from "@/src/service/quizRequest";
 import { useRouter } from "next/navigation";
-import { useQuizContext } from "@/src/context/QuizContext";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 
 export function Hero() {
@@ -38,9 +38,9 @@ export function Hero() {
     }
     return (
         <>
-            <Logo />
+            <LogoPink />
             <Title useSparkles title={t('hero.title.test')} emphasis={t('hero.title.testLine')} />
-            <SelectOption title={t('hero.page3.file')} />
+            <Subtitle title={t('hero.page3.file')} />
 
             <Dropzone onFileChange={setFile} />
             {error && <p className="text-red-500 mt-2">{error}</p>}

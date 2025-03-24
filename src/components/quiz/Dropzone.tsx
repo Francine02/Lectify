@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Border } from "../finishQuiz/Border";
+import { Border } from "../animationsMagicUi/Border";
 
 export function Dropzone({ onFileChange }: { onFileChange: (file: File) => void }) {
     const { t } = useTranslation();

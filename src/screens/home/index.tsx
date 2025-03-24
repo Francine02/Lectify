@@ -1,17 +1,17 @@
+import { Card } from "@/src/components/home/Card";
+import { LogoPink } from "@/src/components/logos/LogoPink";
+import { Subtitle } from "@/src/components/text/Subtitle";
+import { Title } from "@/src/components/text/Title";
 import { useTranslation } from "react-i18next";
-import { Card } from "./Card";
-import { Logo } from "./Logo";
-import { SelectOption } from "./SelectOption";
-import { Title } from "./Title";
 
 export function Hero() {
     const { t } = useTranslation();
 
     return (
         <>
-            <Logo />
+            <LogoPink />
             <Title useSparkles title={t('hero.title.start')} emphasis={t('hero.title.startLine')} />
-            <SelectOption title={t('hero.page1.option')} />
+            <Subtitle title={t('hero.page1.option')} />
 
             <div className="sm:flex gap-5 md:gap-8 lg:gap-10 justify-center">
                 <Card href="/summary" text={t('hero.page1.summary')} img="/assets/Icon-resumo.png" />

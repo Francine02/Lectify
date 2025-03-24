@@ -1,5 +1,5 @@
 import Head from "next/head"
-import { Hero } from "../components/quiz/Hero"
+import { Hero } from "../screens/quiz"
 
 function Quiz() {
     return (

@@ -1,13 +1,14 @@
 import { useQuizContext } from "@/src/context/QuizContext";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Title } from "../home/Title";
-import { Button } from "../quiz/Button";
-import { Modal } from "./Modal";
-import { Option } from "./Option";
-import { ProgressBar } from "./ProgressBar";
-import { Subtitle } from "./Subtitle";
+import { Title } from "@/src/components/text/Title";
+import { Button } from "@/src/components/button/Button";
+import { Modal } from "@/src/components/modal/Modal";
+import { Option } from "@/src/components/questions/Option";
+import { ProgressBar } from "@/src/components/questions/ProgressBar";
+import { Subtitle } from "@/src/components/text/Subtitle";
 import { useRouter } from "next/navigation";
+import { Paragraph } from "@/src/components/text/Paragraph";
 
 export function Hero() {
     const { t } = useTranslation();
@@ -53,7 +54,7 @@ export function Hero() {
 
 
                     <Title className="text-3xl sm:text-4xl lg:text-5xl" emphasis={t('hero.page4.title') + " " + count} />
-                    <Subtitle title={currentQuestion.pergunta} />
+                    <Paragraph title={currentQuestion.pergunta} />
                     {currentQuestion.alternativas.map((a: string, index: any) => {
                         return <Option
                             response={currentQuestion.resposta_correta}

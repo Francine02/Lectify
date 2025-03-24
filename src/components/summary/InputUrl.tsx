@@ -1,7 +1,7 @@
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { Error } from "../finishQuiz/Error";
-import { Button } from "../quiz/Button";
+import { Error } from "../error/Error";
+import { Button } from "../button/Button";
 
 export function InputUrl({ onClick, loading }: { onClick: () => void, loading: boolean }) {
     const { t } = useTranslation();

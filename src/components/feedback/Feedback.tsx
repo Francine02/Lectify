@@ -1,12 +1,13 @@
-import { useTranslation } from "react-i18next";
-import { Modal } from "../questions/Modal";
-import { Dispatch, SetStateAction, useState } from "react";
 import emailjs from '@emailjs/browser';
-import { Title } from "../home/Title";
-import { Input } from "./Input";
+import { Dispatch, SetStateAction, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Error } from "./Error";
-import { Loading } from "../quiz/Loading";
+import { useTranslation } from "react-i18next";
+import { Button } from "../button/Button";
+import { Modal } from "../modal/Modal";
+import { Title } from "../text/Title";
+import { Input } from './input/Input';
+import { Error } from '../error/Error';
+import { PageBlank } from '../pageBlank/PageBlank';
 
 export function Feedback({ showModal }: { showModal: Dispatch<SetStateAction<boolean>> }) {
     const { t } = useTranslation();
@@ -34,7 +35,7 @@ export function Feedback({ showModal }: { showModal: Dispatch<SetStateAction<boo
                 process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
                 process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
                 templateParams,
-                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!);
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
             setStatus('success');
         } catch (error) {
             setStatus('error');
@@ -45,10 +46,7 @@ export function Feedback({ showModal }: { showModal: Dispatch<SetStateAction<boo
     return (
         <Modal setShowModal={showModal}>
             {status === 'success' ? (
-                <div className=" text-center">
-                    <img src="./assets/sucesso.png" alt="sucesso" className="w-20 mx-auto" />
-                    <p className="text-lg font-semibold text-gray-900">{t('contact.successMessage')}</p>
-                </div>
+                <PageBlank text={t('contact.successMessage')} img="./assets/sucesso.png" />
             ) : (
                 <>
                     <Title className="text-2xl sm:text-3xl mb-5" emphasis={t('footer.docs')} />
@@ -88,13 +86,13 @@ export function Feedback({ showModal }: { showModal: Dispatch<SetStateAction<boo
                             {errors.message && <Error text={errors.message.message} />}
                         </div>
 
-                        <button
-                            type="submit"
+                        <Button
                             disabled={status === 'loading'}
-                            className={`text-secondary-phone py-1 sm:py-2 w-72 mt-5 sm:w-96 mx-auto text-gray-50 cursor-pointer font-black rounded-lg bg-gradient-to-r from-rosa via-rosa-secundary to-bege hover:opacity-90 shadow-[0_3px_10px_rgb(0,0,0,0.2)] ${status === 'loading' && 'opacity-50'}`}>
-                            {status === 'loading' ? <Loading /> : t('hero.page5.send')}
-                        </button>
-
+                            loading={status === 'loading'}
+                            text={t('hero.page5.send')}
+                            type='submit'
+                            secondary
+                            className={`text-secondary-phone py-1 sm:py-2 w-72 mt-5 sm:w-96 mx-auto text-gray-50 cursor-pointer font-black rounded-lg bg-gradient-to-r from-rosa via-rosa-secundary to-bege shadow-[0_3px_10px_rgb(0,0,0,0.2)]`} />
                     </form>
 
                     {status === 'error' && <p className='text-center text-sm text-red-600 py-1 font-bold'>{t('contact.errorMessage')}</p>}

@@ -1,9 +1,9 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Logo } from "../header/Logo";
-import { SelectOption } from "../home/SelectOption";
+import { Feedback } from "../feedback/Feedback";
+import { Logo } from "../logos/Logo";
+import { Subtitle } from "../text/Subtitle";
 import { Links } from "./Links";
-import { Feedback } from "../finishQuiz/Feedback";
-import { SetStateAction, useState } from "react";
 
 export function Footer() {
     const { t } = useTranslation();
@@ -18,14 +18,14 @@ export function Footer() {
                 <div className="grid sm:grid-cols-3 py-10 space-y-6 justify-center">
                     <Logo />
                     <div>
-                        <SelectOption title={t('footer.info')} />
+                        <Subtitle title={t('footer.info')} />
                         <p onClick={() => setShowModal(true)} className="cursor-pointer text-center text-[0.8rem] sm:text-[1rem] font-semibold text-text pt-3">{t('footer.docs')}</p>
                         <Links link="https://github.com/Francine02/Lectify" text={`Frontend ${t('footer.code')}`} />
                         <Links link="https://github.com/id0ubl3g/lectify-flask-api" text={`Backend ${t('footer.code')}`} />
                     </div>
 
                     <div>
-                        <SelectOption title={t('footer.develop')} />
+                        <Subtitle title={t('footer.develop')} />
                         <Links link="https://github.com/Francine02" img="/assets/Icon-github.png" text="Francine Cruz" />
                         <Links link="https://www.linkedin.com/in/francine-ccruz" img="/assets/Icon-linkedin.png" text="Francine Cruz" />
                         <Links link="https://github.com/id0ubl3g" img="/assets/Icon-github.png" text="George Victor" />

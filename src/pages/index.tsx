@@ -1,5 +1,5 @@
 import Head from "next/head"
-import { Hero } from "../components/home/Hero"
+import { Hero } from "../screens/home"
 
 function Home() {
   return (

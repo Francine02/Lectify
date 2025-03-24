@@ -1,12 +1,12 @@
+import { LogoPink } from "@/src/components/logos/LogoPink";
+import { InputUrl } from "@/src/components/summary/InputUrl";
+import { Radio } from "@/src/components/summary/Radio";
+import { Subtitle } from "@/src/components/text/Subtitle";
+import { Title } from "@/src/components/text/Title";
 import { DataSummarize } from "@/src/types/DataSummarize";
 import { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { Logo } from "../home/Logo";
-import { SelectOption } from "../home/SelectOption";
-import { Title } from "../home/Title";
-import { InputUrl } from "./InputUrl";
-import { Radio } from "./Radio";
 
 export function Hero() {
     const { t, i18n } = useTranslation();
@@ -43,7 +43,7 @@ export function Hero() {
 
     return (
         <FormProvider {...methods}>
-            <Logo />
+            <LogoPink />
             <Title
                 useSparkles
                 title={t('hero.title.summary')}
@@ -53,7 +53,7 @@ export function Hero() {
             <InputUrl loading={loading} onClick={methods.handleSubmit(onSubmit)} />
 
             <div className="sm:flex space-x-5 justify-center pt-4">
-                <SelectOption title={t('hero.page2.formate')} />
+                <Subtitle title={t('hero.page2.formate')} />
                 <div className="flex justify-center gap-5 ">
                     <Radio
                         {...methods.register('output_format')}

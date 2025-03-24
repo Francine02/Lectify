@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from "react"
-import { Border } from "../finishQuiz/Border"
+import { Border } from "../animationsMagicUi/Border"
 
 interface ModalProps {
     setShowModal: Dispatch<SetStateAction<boolean>>
@@ -8,7 +8,7 @@ interface ModalProps {
 
 export function Modal({ setShowModal, children }: ModalProps) {
     return (
-        <div className="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div className="absolute bg-white z-[100] " aria-labelledby="modal-title" role="dialog" aria-modal="true">
 
             <div className="fixed inset-0 bg-gray-200/35 transition-opacity" aria-hidden="true"></div>
 

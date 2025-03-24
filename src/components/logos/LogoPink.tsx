@@ -1,5 +1,5 @@
 
-export function Logo() {
+export function LogoPink() {
     return (
         <>
             <img

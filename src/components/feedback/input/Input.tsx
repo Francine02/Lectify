@@ -1,12 +1,6 @@
 import { forwardRef, ForwardRefRenderFunction } from "react"
-import { Error } from "./Error";
-
-interface InputProps {
-    type: 'text' | 'email',
-    placeholder: string,
-    errorMessage: string | undefined,
-    errors: boolean
-}
+import { Error } from "../../error/Error"
+import { InputProps } from "./InputProps";
 
 const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = ({ type, placeholder, errors, errorMessage, ...rest }, ref) => {
     return (

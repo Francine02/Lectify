@@ -1,13 +1,5 @@
-import { Loading } from "./Loading";
-
-interface ButtonProps {
-    onClick: (e: React.FormEvent) => void,
-    loading?: boolean,
-    text: string,
-    disabled?: boolean,
-    secondary?: boolean,
-    className?: string
-}
+import { Loading } from "../loading/Loading";
+import { ButtonProps } from "./ButtonProps";
 
 export function Button({ onClick, loading, text, disabled, secondary, className }: ButtonProps) {
     return (

@@ -1,12 +1,12 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Subtitle } from "../questions/Subtitle";
-import { Button } from "../quiz/Button";
-import { ConfettiDemo } from "./Confetti";
-import { Feedback } from "./Feedback";
-import { PointerDemo } from "./Pointer";
-import { Score } from "./Score";
+import { Subtitle } from "@/src/components/text/Subtitle";
+import { Button } from "@/src/components/button/Button";
+import { ConfettiDemo } from "@/src/components/animationsMagicUi/Confetti";
+import { Feedback } from "@/src/components/feedback/Feedback";
+import { PointerDemo } from "@/src/components/animationsMagicUi/Pointer";
+import { Score } from "@/src/components/animationsMagicUi/Score";
 
 export function Hero() {
     const { t } = useTranslation();

@@ -1,5 +1,5 @@
 import Head from "next/head"
-import { Hero } from "../screens/summary"
+import { Hero } from "../../screens/summary"
 
 function Summary() {
     return (

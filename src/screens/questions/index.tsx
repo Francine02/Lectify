@@ -9,6 +9,7 @@ import { ProgressBar } from "@/src/components/questions/ProgressBar";
 import { Subtitle } from "@/src/components/text/Subtitle";
 import { useRouter } from "next/navigation";
 import { Paragraph } from "@/src/components/text/Paragraph";
+import { PageBlank } from "@/src/components/pageBlank/PageBlank";
 
 export function Hero() {
     const { t } = useTranslation();
@@ -69,7 +70,7 @@ export function Hero() {
                     {showModal && (
                         <Modal
                             setShowModal={setShowModal}>
-                            <img src="./assets/dica.png" className="w-16 mx-auto" alt="dica" />
+                            <img src="/assets/dica.png" className="w-16 mx-auto" alt="dica" />
                             <div className="mt-2">
                                 <p className="text-sm font-medium">{currentQuestion.dica}</p>
                             </div>
@@ -101,16 +102,13 @@ export function Hero() {
                     </div>
                 </div>
             ) : (
-                <div className="grid justify-center">
-                    <img
-                        className="mx-auto"
-                        src="./assets/erro.png"
-                        alt="Erro" />
-                    <h1 className="font-semibold text-center text-lg">{t('hero.page4.error')}</h1>
+                <div className="grid justify-center mx-auto">
+                    <PageBlank img="/assets/erro.png" text={t('hero.page4.error')} />
                     <Button
+                    className="mx-auto px-8 py-1 rounded-lg mt-5"
                         onClick={() => router.push('/quiz')}
                         loading={false}
-                        text={t('hero.page4.back')} />
+                        text={t('hero.page5.back')} />
                 </div>
             )}
 

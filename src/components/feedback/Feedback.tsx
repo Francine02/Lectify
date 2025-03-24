@@ -46,7 +46,7 @@ export function Feedback({ showModal }: { showModal: Dispatch<SetStateAction<boo
     return (
         <Modal setShowModal={showModal}>
             {status === 'success' ? (
-                <PageBlank text={t('contact.successMessage')} img="./assets/sucesso.png" />
+                <PageBlank text={t('contact.successMessage')} img="/assets/sucesso.png" />
             ) : (
                 <>
                     <Title className="text-2xl sm:text-3xl mb-5" emphasis={t('footer.docs')} />

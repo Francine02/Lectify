@@ -40,6 +40,10 @@
             "evaluate": "Evaluate"
         }
     },
+    "polity": {
+        "agree": "I agree with ",
+        "privacy": "Privacy Policy."
+    },
     "footer": {
         "info": "Information:",
         "docs": "Leave Feedback",
@@ -47,35 +51,30 @@
         "license": "All rights reserved.",
         "develop": "Developed by:"
     },
+    "feedback": {
+        "name": "Enter your name...",
+        "email": "Enter your email...",
+        "message": "Enter your message..."
+    },
     "errors": {
-        "typeFile": "File hint not supported. Download PDF or MD files.",
-        "NoDataProvided": "No data provided",
-        "MissingRequiredFields": "Missing required fields",
-        "MissingYouTubeURL": "Missing YouTube URL",
-        "UrlExceedsMaximumLength": "URL exceeds maximum length",
-        "InvalidYoutubeUrl": "Invalid YouTube URL",
-        "UnsupportedFormat": "Invalid format. Supported formats",
-        "MissingLanguageSelection": "Missing language selection",
-        "InvalidLanguage": "Invalid format. Supported formats",
-        "FileNotFound": "File not found",
-        "DocumentConversionError": "Error during document conversion",
-        "OsError": "OS error occurred while handling the file",
-        "DocumentBuildingError": "Error during document building",
-        "ChatGenerationError": "Error during chat generation",
-        "UnableToUnderstandTheAudio": "Unable to understand the audio",
-        "ServiceRequestError": "Error in service request",
-        "AudioRecognitionError": "Error during audio recognition",
-        "DownloadError": "Download error occurred. Please check the URL and your network connection",
-        "NetworkError": "Network error. Please check your internet connection",
-        "AudioDownloadingError": "Error during audio downloading",
-        "NoFileReceived": "No file received",
-        "FileExceedsMaximumLength": "File name exceeds the maximum length of 100 characters",
-        "InvalidFormat": "Invalid format. Supported formats",
-        "SuspiciousFileName": "The filename seems suspicious and contains a blocked extension",
-        "InvalidFileType": "Invalid file type",
-        "ExtractionError": "Error during text extraction from the file",
-        "FileSizeExceeds5MB": "File size exceeds the maximum limit of 5 MB",
-        "ProcessingError": "An error occurred while processing the request",
+        "typeFile": "Invalid file format!",
+        "URL exceeds maximum length": "URL exceeds maximum length!",
+        "Document conversion error": "Error during document conversion!",
+        "OS error": "OS error occurred while handling the file!",
+        "Document building error": "Error during document building!",
+        "Chat generation error": "Error during Quiz generation!",
+        "Unable to understand the audio": "Unable to understand the audio!",
+        "Service request error": "Error in service request!",
+        "Audio recognition error": "Error during audio recognition!",
+        "Download error": "Error occurred. Please check the URL and your network connection!",
+        "Network error": "Network error. Please check your internet connection!",
+        "Audio downloading error": "Error during audio downloading!",
+        " File exceeds maximum length": "File name exceeds the maximum length of 100 characters!",
+        "Suspicious file name": "The filename seems suspicious and contains a blocked extension!",
+        "InvalidFileType": "Invalid file type!",
+        "Extraction error": "Error during text extraction from the file!",
+        "Payload Too Large": "File size exceeds the maximum limit of 5 MB!",
+        "Processing error": "An error occurred while processing the request!",
         "type": {
             "required": "Mandatory field!",
             "onlyLetters": "Only letters are allowed!",
@@ -84,6 +83,6 @@
     },
     "contact": {
         "successMessage": "Message sent successfully! Thanks for the feedback",
-        "errorMessage": "ERROR! Message not sent."
+        "errorMessage": "An error occurred while sending the message!"
     }
 }

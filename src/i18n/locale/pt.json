@@ -40,6 +40,10 @@
             "evaluate": "Avaliar"
         }
     },
+    "polity": {
+        "agree": "Eu concordo com a ",
+        "privacy": "Política de Privacidade."
+    },
     "footer": {
         "info": "Informações:",
         "docs": "Deixe Feedback",
@@ -47,35 +51,29 @@
         "license": "Todos os direitos reservados.",
         "develop": "Desenvolvido por:"
     },
+    "feedback": {
+        "name": "Insira seu nome...",
+        "email": "Insira seu email...",
+        "message": "Insira sua mensagem..."
+    },
     "errors": {
-        "typeFile": "Dica de arquivo não suportada. Baixe arquivos PDF ou MD.",
-        "NoDataProvided": "Nenhum dado fornecido",
-        "MissingRequiredFields": "Campos obrigatórios ausentes",
-        "MissingYouTubeURL": "URL do YouTube ausente",
-        "UrlExceedsMaximumLength": "A URL excede o comprimento máximo",
-        "InvalidYoutubeUrl": "URL do YouTube inválida",
-        "UnsupportedFormat": "Formato inválido. Formatos suportados: {",
-        "MissingLanguageSelection": "Seleção de idioma ausente",
-        "InvalidLanguage": "Formato inválido. Formatos suportados",
-        "FileNotFound": "Arquivo não encontrado",
-        "DocumentConversionError": "Erro durante a conversão do documento",
-        "OsError": "Ocorreu um erro do sistema operacional ao manipular o arquivo",
-        "DocumentBuildingError": "Erro durante a criação do documento",
-        "ChatGenerationError": "Erro durante a geração do chat",
-        "UnableToUnderstandTheAudio": "Não foi possível entender o áudio",
-        "ServiceRequestError": "Erro na solicitação do serviço",
-        "AudioRecognitionError": "Erro durante o reconhecimento do áudio",
-        "DownloadError": "Ocorreu um erro no download. Verifique a URL e sua conexão de rede",
-        "NetworkError": "Erro de rede. Verifique sua conexão com a internet",
-        "AudioDownloadingError": "Erro durante o download do áudio",
-        "NoFileReceived": "Nenhum arquivo recebido",
-        "FileExceedsMaximumLength": "O nome do arquivo excede o limite máximo de 100 caracteres",
-        "InvalidFormat": "Formato inválido. Formatos suportados",
-        "SuspiciousFileName": "O nome do arquivo parece suspeito e contém uma extensão bloqueada",
-        "InvalidFileType": "Tipo de arquivo inválido. Detectado: {detected_mime_type}. Esperado",
-        "ExtractionError": "Erro durante a extração de texto do arquivo",
-        "FileSizeExceeds5MB": "O tamanho do arquivo excede o limite máximo de 5 MB",
-        "ProcessingError": "Ocorreu um erro ao processar a solicitação",
+        "typeFile": "Formato de arquivo inválido!",
+        "URL exceeds maximum length": "A URL excede o comprimento máximo!",
+        "Document conversion error": "Erro durante a conversão do documento!",
+        "OS error": "Ocorreu um erro do sistema operacional ao manipular o arquivo!",
+        "Document building error": "Erro durante a criação do documento!",
+        "Chat generation error": "Erro durante a geração do Quiz!",
+        "Unable to understand the audio": "Não foi possível entender o áudio!",
+        "Service request error": "Erro na solicitação do serviço!",
+        "Audio recognition error": "Erro durante o reconhecimento do áudio!",
+        "Download error": "Ocorreu um erro. Verifique a URL e sua conexão de rede!",
+        "Network error": "Erro de rede. Verifique sua conexão com a internet!",
+        "Audio downloading error": "Erro durante o download do áudio!",
+        " File exceeds maximum length": "O nome do arquivo excede o limite máximo de 100 caracteres!",
+        "Suspicious file name": "O nome do arquivo parece suspeito e contém uma extensão bloqueada!",
+        "Extraction error": "Erro durante a extração de texto do arquivo!",
+        "Payload Too Large": "O tamanho do arquivo excede o limite máximo de 5 MB!",
+        "Processing error": "Ocorreu um erro ao processar a solicitação!",
         "type": {
             "required": "Campo obrigatório!",
             "onlyLetters": "Somente letras são permitidas!",
@@ -84,6 +82,6 @@
     },
     "contact": {
         "successMessage": "Mensagem enviada com sucesso! Agradecemos pelo feedback",
-        "errorMessage": "ERRO! Mensagem não enviada."
+        "errorMessage": "Ocorreu um erro ao enviar a mensage!"
     }
 }

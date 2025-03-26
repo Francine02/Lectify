@@ -38,8 +38,8 @@ export function Hero() {
     }
 
     const handleFinish = () => {
-        router.push('/finishQuiz');
         sessionStorage.removeItem('quizData');
+        router.push('/quiz/questions/finish-quiz');
     }
 
     return (

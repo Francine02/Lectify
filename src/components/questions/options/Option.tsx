@@ -12,7 +12,7 @@ export function Option({ alternative, selected, onClick, response, justification
             <button
                 disabled={selected.length > 1}
                 onClick={onClick}
-                className={`${isSelectedCorrect ? 'bg-green-200' : isSelectedWrong ? 'bg-red-200' : 'bg-bg-components'} ${isSelected ? 'bg-green-200 cursor-text pointer-events-none' : selected.length > 1 && 'cursor-text pointer-events-none'} bg-bg-components w-full md:w-[35rem] max-h-44 overflow-y-auto rounded-lg p-2 px-5 sm:px-7 mx-auto mb-5 cursor-pointer`}>
+                className={`${isSelectedCorrect ? 'bg-green-200' : isSelectedWrong ? 'bg-red-200' : 'bg-bg-components'} ${isSelected ? 'bg-green-200 cursor-text pointer-events-none' : selected.length > 1 && 'cursor-text pointer-events-none'} bg-bg-components w-full md:w-[35rem] rounded-lg p-2 px-5 sm:px-7 mx-auto mb-5 cursor-pointer`}>
                 <p>{alternative}</p>
                 {isSelected &&
                     <p className="text-justify mt-5 font-medium text-sm">

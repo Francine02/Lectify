@@ -1,41 +1,35 @@
-import { useState } from "react";
+import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { Border } from "../animationsMagicUi/Border";
+import { File } from "../file/File";
 
-export function Dropzone({ onFileChange }: { onFileChange: (file: File) => void }) {
+export function Dropzone() {
     const { t } = useTranslation();
-    const [file, setFile] = useState<File | null>(null);
-    const [error, setError] = useState<boolean>(false);
+    const { setValue, register, watch, formState: { errors }, setError } = useFormContext();
 
     const acceptedFileTypes = ["application/pdf", "text/markdown"];
+    const file = watch("file");
 
     const validateFileType = (file: File): boolean => {
         return acceptedFileTypes.includes(file.type);
     }
 
-    const handleFileSelection = (file: File) => {
-        if (validateFileType(file)) {
-            setFile(file);
-            onFileChange(file);
-            setError(false);
+    const handleFileChange = (file: File | undefined) => {
+        if (!file) {
+            setValue("file", null, { shouldValidate: true });
+            return;
+        }
+        if (!validateFileType(file)) {
+            setError("file", { type: "manual", message: t("errors.typeFile") });
         } else {
-            setError(true);
+            setValue("file", file, { shouldValidate: true });
         }
-    }
-
-    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const selectedFile = event.target.files?.[0];
-        if (selectedFile) {
-            handleFileSelection(selectedFile);
-        }
-    }
+    };
 
     const handleDrop = (event: React.DragEvent<HTMLLabelElement>) => {
         event.preventDefault();
         const droppedFile = event.dataTransfer.files[0];
-        if (droppedFile) {
-            handleFileSelection(droppedFile);
-        }
+        handleFileChange(droppedFile);
     }
 
     const handleDragOver = (event: React.DragEvent<HTMLLabelElement>) => {
@@ -44,13 +38,11 @@ export function Dropzone({ onFileChange }: { onFileChange: (file: File) => void 
 
     return (
         <div className="flex flex-col items-center justify-center py-8 text-center">
-            {file ? (
-                <p className="text-[#868686] w-full sm:w-96 overflow-auto p-3 flex justify-center items-center max-h-40 rounded-lg cursor-pointer bg-bg-components ">
-                    {t("hero.page3.fileIn")}: <span className="font-semibold"> {file.name}</span>
-                </p>
+            {file && !errors.file? (
+                <File text={file.name} />
             ) : (
                 <div className="rounded-3xl relative overflow-x-clip">
-                    <Border/>
+                    <Border />
                     <label
                         onDrop={handleDrop}
                         onDragOver={handleDragOver}
@@ -59,7 +51,7 @@ export function Dropzone({ onFileChange }: { onFileChange: (file: File) => void 
                     >
                         <div className="flex flex-col items-center justify-center pt-5 pb-6">
                             <img
-                                className="w-12"
+                                className="w-9"
                                 src="/assets/Upload.png"
                                 alt="upload" />
                             <p className="mb-2 text-sm font-black">
@@ -71,13 +63,15 @@ export function Dropzone({ onFileChange }: { onFileChange: (file: File) => void 
                             id="dropzone-file"
                             type="file"
                             className="hidden"
-                            onChange={handleFileChange}
+                            {...register("file", {
+                                onChange: (e) => {
+                                    const selectedFile = e.target.files?.[0];
+                                    handleFileChange(selectedFile);
+                                }
+                            })}
                         />
                     </label>
                 </div>
-            )}
-            {error && (
-                <p className="mt-2 text-sm text-red-500">{t("errors.typeFile")}</p>
             )}
         </div>
     );

@@ -5,7 +5,7 @@ import { Button } from "../../button/Button";
 
 export function InputUrl({ onClick, loading }: { onClick: () => void, loading: boolean }) {
     const { t } = useTranslation();
-    const { register, formState: { errors } } = useFormContext();
+    const { register, formState: { errors, isValid } } = useFormContext();
 
     return (
         <div className="max-w-80 sm:max-w-full sm:w-96 md:w-[30rem] m-auto mb-4">
@@ -25,12 +25,12 @@ export function InputUrl({ onClick, loading }: { onClick: () => void, loading: b
                     type="text"
                     placeholder={t('hero.page2.url')}
                 />
-                {errors.url &&
-                    <Error text={errors.url.message?.toString()} />
+                {errors.youtube_url &&
+                    <Error text={errors.youtube_url?.message?.toString()} />
                 }
 
                 <div className="absolute top-0.5 right-1 p-[0.1rem]">
-                    <Button className="h-7.5 items-center rounded-lg py-1 px-3 text-center text-sm font-bold " onClick={onClick} loading={loading} text={t('hero.page2.button')} />
+                    <Button disabled={!isValid} className="h-7.5 items-center rounded-lg py-1 px-3 text-center text-sm font-bold " onClick={onClick} loading={loading} text={t('hero.page2.button')} />
                 </div>
             </div>
         </div>

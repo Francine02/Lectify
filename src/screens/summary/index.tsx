@@ -1,3 +1,4 @@
+import { Checkbox } from "@/src/components/checkbox/Checkbox";
 import { LogoPink } from "@/src/components/logos/LogoPink";
 import { InputUrl } from "@/src/components/summary/input/InputUrl";
 import { Radio } from "@/src/components/summary/radio/Radio";
@@ -51,6 +52,8 @@ export function Hero() {
                 titleContinuation={i18n.language === 'pt' ? " automático." : ""} />
 
             <InputUrl loading={loading} onClick={methods.handleSubmit(onSubmit)} />
+
+            <Checkbox name='summaryPolity' />
 
             <div className="sm:flex space-x-5 justify-center pt-4">
                 <Subtitle title={t('hero.page2.formate')} />

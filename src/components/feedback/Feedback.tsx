@@ -61,7 +61,7 @@ export function Feedback({ showModal }: { showModal: Dispatch<SetStateAction<boo
                                     value: /^([a-zA-Zà-úÀ-Ú]|\s+)+$/,
                                     message: t('errors.type.onlyLetters')
                                 }
-                            })} type={"text"} placeholder={"Luiz Antonio"} />
+                            })} type={"text"} placeholder={t('feedback.name')} />
 
                         <Input
                             errorMessage={errors?.email?.message}
@@ -74,10 +74,11 @@ export function Feedback({ showModal }: { showModal: Dispatch<SetStateAction<boo
                                 }
                             })}
                             type={"text"}
-                            placeholder={"luizantonio@gmail.com"} />
+                            placeholder={t('feedback.email')} />
 
                         <div className="relative">
                             <textarea
+                                placeholder={t('feedback.message')}
                                 className='w-full px-3 py-2 max-h-64 min-h-20 rounded-lg shadow-[0_3px_10px_rgb(0,0,0,0.2)]'
                                 {...register('message', {
                                     required: t('errors.type.required')
@@ -92,7 +93,7 @@ export function Feedback({ showModal }: { showModal: Dispatch<SetStateAction<boo
                             text={t('hero.page5.send')}
                             type='submit'
                             secondary
-                            className={`text-secondary-phone py-1 sm:py-2 w-72 mt-5 sm:w-96 mx-auto text-gray-50 cursor-pointer font-black rounded-lg bg-gradient-to-r from-rosa via-rosa-secundary to-bege shadow-[0_3px_10px_rgb(0,0,0,0.2)]`} />
+                            className={`text-secondary-phone py-1.5 sm:py-2 w-72 mt-5 sm:w-96 mx-auto text-gray-50 cursor-pointer font-black rounded-lg bg-gradient-to-r from-rosa via-rosa-secundary to-bege shadow-[0_3px_10px_rgb(0,0,0,0.2)]`} />
                     </form>
 
                     {status === 'error' && <p className='text-center text-sm text-red-600 py-1 font-bold'>{t('contact.errorMessage')}</p>}

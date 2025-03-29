@@ -37,7 +37,7 @@
             "error": "Error! Please insert a file to start the test"
         },
         "page5": {
-            "congratulations": "Congratulations🎉",
+            "congratulations": "Congratulations",
             "points": "You scored:",
             "back": "Back",
             "send": "SEND",

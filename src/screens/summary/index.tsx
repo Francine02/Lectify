@@ -51,9 +51,6 @@ export function SummaryContent() {
                     <InputUrl loading={loading} onClick={methods.handleSubmit(onSubmit)} />
                     {(error || methods.formState.errors.youtube_url) && <Error className="flex justify-center mb-5 mt-[-1rem] text-center" text={error || methods.formState.errors?.youtube_url?.message?.toString()} />}
 
-
-                    <Checkbox name='summaryPolity' />
-
                     <div className="sm:flex space-x-5 justify-center pt-4">
                         <Subtitle title={t('hero.page2.formate')} />
                         <div className="flex justify-center gap-5 ">

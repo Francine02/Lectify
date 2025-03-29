@@ -43,7 +43,7 @@ export function ConfettiDemo() {
 
     return (
         <div className="relative flex w-full flex-col items-center justify-center overflow-hidden rounded-lg">
-            <Title title={t('hero.page5.congratulations') + "!"}/>
+            <Title title={t('hero.page5.congratulations') + "!🩷"}/>
 
             <Confetti
                 ref={confettiRef}

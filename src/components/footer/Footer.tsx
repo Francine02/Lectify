@@ -19,7 +19,7 @@ export function Footer() {
                     <Logo />
                     <div>
                         <Subtitle title={t('footer.info')} />
-                        <p onClick={() => setShowModal(true)} className="cursor-pointer text-center text-[0.8rem] sm:text-[1rem] font-semibold text-text pt-3">{t('footer.docs')}</p>
+                        <p onClick={() => setShowModal(true)} className="cursor-pointer text-center text-[0.8rem] sm:text-[1rem] font-semibold text-text pt-3 hover:opacity-75">{t('footer.docs')}</p>
                         <Links link="https://github.com/Francine02/Lectify" text={`Frontend ${t('footer.code')}`} />
                         <Links link="https://github.com/id0ubl3g/lectify-flask-api" text={`Backend ${t('footer.code')}`} />
                     </div>

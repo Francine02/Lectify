@@ -16,6 +16,10 @@
         "page2": {
             "url": "Enter the url...",
             "button": "Generate",
+            "summary": "Summary",
+            "success": "Your summary is ready!🎉 We hope it is useful for you.",
+            "feedback": "If you liked it, how about giving us some feedback? Your opinion helps us to improve even more!",
+            "shared": "Share with your friends so they can enjoy it too! Thanks for using Lectify! 🩷",
             "formate": "Select the desired format:"
         },
         "page3": {
@@ -33,7 +37,7 @@
             "error": "Error! Please insert a file to start the test"
         },
         "page5": {
-            "congratulations": "Congratulations",
+            "congratulations": "Congratulations🎉",
             "points": "You scored:",
             "back": "Back",
             "send": "SEND",
@@ -58,6 +62,7 @@
     },
     "errors": {
         "typeFile": "Invalid file format!",
+        "URL invalid": "Invalid URL!",
         "URL exceeds maximum length": "URL exceeds maximum length!",
         "Document conversion error": "Error during document conversion!",
         "OS error": "OS error occurred while handling the file!",
@@ -74,7 +79,7 @@
         "InvalidFileType": "Invalid file type!",
         "Extraction error": "Error during text extraction from the file!",
         "Payload Too Large": "File size exceeds the maximum limit of 5 MB!",
-        "Processing error": "An error occurred while processing the request!",
+        "Processing error": "An error occurred while processing the request! Please, try again later.",
         "type": {
             "required": "Mandatory field!",
             "onlyLetters": "Only letters are allowed!",

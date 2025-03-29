@@ -1,5 +1,5 @@
 import Head from "next/head"
-import { Hero } from "../screens/home"
+import { HomeContent } from "../screens/home"
 
 function Home() {
   return (
@@ -7,7 +7,7 @@ function Home() {
       <Head>
         <title>Lectify | Home</title>
       </Head>
-      <Hero />
+      <HomeContent/>
     </>
   )
 }

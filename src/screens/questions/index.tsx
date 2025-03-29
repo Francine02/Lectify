@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-export function Hero() {
+export function QuestionsContent() {
     const { t } = useTranslation();
     const { data, setScore } = useQuizContext();
     const [count, setCount] = useState(1);

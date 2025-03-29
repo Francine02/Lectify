@@ -1,5 +1,5 @@
 import Head from "next/head"
-import { Hero } from "../../../screens/questions"
+import { QuestionsContent } from "../../../screens/questions"
 
 function Questions() {
     return (
@@ -7,7 +7,7 @@ function Questions() {
             <Head>
                 <title>Lectify | Questions</title>
             </Head>
-            <Hero />
+            <QuestionsContent />
         </>
     )
 }

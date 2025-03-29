@@ -1,5 +1,5 @@
+import { FinishQuizContent } from "@/src/screens/finishQuiz"
 import Head from "next/head"
-import { Hero } from "@/src/screens/finishQuiz"
 
 function FinishQuiz() {
     return (
@@ -7,7 +7,7 @@ function FinishQuiz() {
             <Head>
                 <title>Lectify | Finish Quiz</title>
             </Head>
-            <Hero />
+            <FinishQuizContent />
         </>
     )
 }

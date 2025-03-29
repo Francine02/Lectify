@@ -1,8 +1,7 @@
-import axios from "./config"
-
+import axios from "axios";
 export const quizRequest = async (formData: FormData) => {
     try {
-        const response = await axios.post('questions', formData);
+        const response = await axios.post(`${process.env.NEXT_PUBLIC_LECTIFY_API_QUESTIONS}`, formData);
 
         return {
             data: response.data,
@@ -19,10 +18,8 @@ export const quizRequest = async (formData: FormData) => {
             if (status === 400) {
                 return { error: data.error };
             }
-
-            return { error: "Processing error" };
         }
 
-        return { error: "Network error" };
+        return { error: "Processing error" };
     }
 }

@@ -4,7 +4,7 @@ import { Subtitle } from "@/src/components/text/Subtitle";
 import { Title } from "@/src/components/text/title/Title";
 import { useTranslation } from "react-i18next";
 
-export function Hero() {
+export function HomeContent() {
     const { t } = useTranslation();
 
     return (

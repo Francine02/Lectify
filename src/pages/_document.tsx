@@ -6,7 +6,7 @@ export default function Document() {
             <Head>
                 <title>Lectify</title>
                 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
-                <link rel="shortcut icon" href="/public/favicon.png" />
+                <link rel="shortcut icon" href="/favicon.png" />
                 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1044585829409035"
                     crossOrigin="anonymous"></script>
             </Head>

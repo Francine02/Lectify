@@ -16,7 +16,7 @@ export function FinishQuizContent() {
     }
 
     return (
-        <section className="text-center bg-bg-components max-w-[35rem] mx-auto p-10 rounded-lg">
+        <section className="text-center bg-bg-components max-w-[40rem] mx-auto p-10 rounded-lg">
             <img src="/assets/congratulations.png" alt="Felicidades icone" className="mx-auto w-20"/>
             <ConfettiDemo />
             <Subtitle title={t('hero.page5.points')} />

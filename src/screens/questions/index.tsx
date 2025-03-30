@@ -1,3 +1,4 @@
+import Animated from "@/src/components/animations/Animation";
 import { Button } from "@/src/components/button/Button";
 import { Modal } from "@/src/components/modal/Modal";
 import { PageBlank } from "@/src/components/pageBlank/PageBlank";
@@ -43,7 +44,7 @@ export function QuestionsContent() {
     }
 
     return (
-        <>
+        <Animated key={count} direction="right">
             {currentQuestion ? (
                 <div className="grid">
                     <div className="flex justify-center mb-7">
@@ -78,7 +79,7 @@ export function QuestionsContent() {
 
                     <div className="flex justify-center gap-10 pt-1">
                         <Button
-                        secondary
+                            secondary
                             onClick={() =>
                                 setShowModal(true)}
                             loading={false}
@@ -104,13 +105,13 @@ export function QuestionsContent() {
                 <div className="grid justify-center mx-auto">
                     <PageBlank img="/assets/erro.png" text={t('hero.page4.error')} />
                     <Button
-                    className="mx-auto px-8 py-1 rounded-lg mt-5"
+                        className="mx-auto px-8 py-1 rounded-lg mt-5"
                         onClick={() => router.push('/quiz')}
                         loading={false}
                         text={t('hero.page5.back')} />
                 </div>
             )}
 
-        </>
+        </Animated>
     )
 }

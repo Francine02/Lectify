@@ -21,6 +21,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "emailjs": "^4.0.3",
+    "framer-motion": "^12.6.2",
     "i18next": "^24.2.2",
     "lectify": "file:",
     "lucide-react": "^0.483.0",

@@ -24,8 +24,8 @@
 ### Versão Mobile
 
 <div align="center">
-  <img src="./public/docs/mb-home.jpeg" width="300" /> <img src="./public/docs/mb-teste.jpeg" width="300" /> <img src="./public/docs/mb-questao.jpeg" width="300" />
-  <img src="./public/docs/mb-parabens.jpeg" width="300" /> <img src="./public/docs/mb-resumo.jpeg" width="300" /> <img src="./public/docs/mb-resumo-arquivo.jpeg" width="300" />
+  <img src="./public/docs/mb-home.jpeg" width="200" /> <img src="./public/docs/mb-teste.jpeg" width="200" /> <img src="./public/docs/mb-questao.jpeg" width="200" />
+  <img src="./public/docs/mb-parabens.jpeg" width="200" /> <img src="./public/docs/mb-resumo.jpeg" width="200" /> <img src="./public/docs/mb-resumo-arquivo.jpeg" width="200" />
 </div>
 
 ---

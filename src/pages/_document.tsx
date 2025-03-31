@@ -1,5 +1,4 @@
-import { Html, Head, Main, NextScript } from 'next/document'
-import GoogleAdsense from '../components/googleAdsense/GoogleAdsense'
+import { Head, Html, Main, NextScript } from 'next/document'
 
 export default function Document() {
     return (
@@ -8,9 +7,11 @@ export default function Document() {
                 <title>Lectify</title>
                 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
                 <link rel="shortcut icon" href="/favicon.png" />
+                <script async
+                    src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-${process.env.NEXT_PUBLIC_ADSENSE}`}
+                    crossOrigin="anonymous"/>
             </Head>
             <body>
-                <GoogleAdsense pId={process.env.NEXT_PUBLIC_ADSENSE as string} />
                 <Main />
                 <NextScript />
             </body>

@@ -1,9 +1,8 @@
-import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { ReactNode } from "react";
+import Animated from "../animations/Animation";
 import { Footer } from "../footer/Footer";
 import { Header } from "../header/Header";
-import Animated from "../animations/Animation";
 
 type LayoutProps = {
     children: ReactNode;

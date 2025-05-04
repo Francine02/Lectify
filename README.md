@@ -83,14 +83,8 @@ Confira a documentação completa da API [aqui](https://github.com/id0ubl3g/lect
 
 Estamos constantemente aprimorando o Lectify! Confira as próximas funcionalidades que estão em desenvolvimento:
 
-> **Integração ADSense:**  
->   Em breve, o Lectify contará com integração ao ADSense para possibilitar a monetização do site.
->
 > **Tema escuro/claro:**  
 > Em breve, os usuários poderão alternar entre tema claro e escuro para uma experiência de visualização personalizada.
->
-> **Feedbacks enviados:**  
->Estamos trabalhando em uma funcionalidade para exibir os feedbacks recebidos, permitindo uma interação mais transparente com a comunidade.
 
 ---
 

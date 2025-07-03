@@ -79,7 +79,7 @@
         "InvalidFileType": "Invalid file type!",
         "Extraction error": "Error during text extraction from the file!",
         "Payload Too Large": "File size exceeds the maximum limit of 5 MB!",
-        "Processing error": "An error occurred while processing the request! Please, try again later.",
+        "Processing error": "Service currently unavailable! Please, try again later.",
         "type": {
             "required": "Mandatory field!",
             "onlyLetters": "Only letters are allowed!",

@@ -78,7 +78,7 @@
         "Suspicious file name": "O nome do arquivo parece suspeito e contém uma extensão bloqueada!",
         "Extraction error": "Erro durante a extração de texto do arquivo!",
         "Payload Too Large": "O tamanho do arquivo excede o limite máximo de 5 MB!",
-        "Processing error": "Ocorreu um erro ao processar a solicitação! Por favor, tente novamente mais tarde",
+        "Processing error": "Serviço indisponível no momento! Por favor, tente novamente mais tarde",
         "type": {
             "required": "Campo obrigatório!",
             "onlyLetters": "Somente letras são permitidas!",

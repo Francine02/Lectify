@@ -1,6 +1,5 @@
-import { Language } from "./Language";
 import { Logo } from "../logos/Logo";
-import { ToggleTheme } from "./ToggleTheme";
+import { Language } from "./Language";
 
 export function Header() {
     return (
@@ -9,7 +8,6 @@ export function Header() {
 
             <div className=" space-x-3">
                 <Language />
-                <ToggleTheme />
             </div>
         </header>
     )

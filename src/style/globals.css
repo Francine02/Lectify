@@ -12,18 +12,20 @@
 
 @layer base {
   * {
-    font-family: 'Lora', serif;
     scrollbar-width: thin;
     scrollbar-color: #ff0059b8 #dadada00;
   }
 }
 
 @theme {
-  --color-vine-400: #faeef2;
-  --color-vine-500: #8c2742;
-  --color-vine-600: #4a0e23;
-  --color-white-200: #f3f2f2;
-  --color-text: #292929;
+  --color-rose-500: oklch(89% 0.058 10.001);
+
+  --color-rose-600: #f28599;
+  --color-green-600: #8c7a20;
+
+  --color-blue-700: #212045;
+  --color-rose-700: #732449;
+  --color-green-700: #42440f;
 
   --text-title: clamp(1.5rem, 1rem + 1vw, 2.2rem);
   --text-secondary: clamp(0.8rem, 0.5rem + 0.5vw, 1rem);

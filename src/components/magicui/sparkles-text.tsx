@@ -9,7 +9,7 @@ import {
   useState,
   FC,
 } from "react";
-import { cn } from "./lib/utils";
+import { cn } from "@/utils/cn";
 
 interface SparkleProps {
   id: string;
@@ -21,14 +21,7 @@ interface SparkleProps {
   lifespan: number;
 }
 
-const Sparkle: FC<SparkleProps> = ({
-  id,
-  x,
-  y,
-  color,
-  delay,
-  scale,
-}) => (
+const Sparkle: FC<SparkleProps> = ({ id, x, y, color, delay, scale }) => (
   <motion.svg
     key={id}
     className="pointer-events-none absolute z-20"
@@ -84,7 +77,10 @@ export const SparklesText: FC<SparklesTextProps> = ({
     };
 
     const initializeSparkles = () => {
-      const newSparkles = Array.from({ length: sparklesCount }, generateSparkle);
+      const newSparkles = Array.from(
+        { length: sparklesCount },
+        generateSparkle
+      );
       setSparkles(newSparkles);
     };
 

@@ -15,7 +15,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         />
       </section>
 
-      <section className="bg-white my-auto space-y-2 lg:px-10 md:max-w-[40rem] w-full mx-auto">
+      <section className="bg-white my-auto lg:px-10 md:max-w-[40rem] w-full mx-auto">
         {children}
       </section>
     </main>

@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   },
 };
 
-function Cadastro() {
+function Register() {
   return <RegisterForm />;
 }
 
-export default Cadastro;
+export default Register;

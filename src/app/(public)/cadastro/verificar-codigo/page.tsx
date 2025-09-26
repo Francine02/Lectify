@@ -1,7 +1,7 @@
 import { CheckCodeForm } from './form';
 
-function VerificarCodigo() {
+function CheckCode() {
   return <CheckCodeForm />;
 }
 
-export default VerificarCodigo;
+export default CheckCode;

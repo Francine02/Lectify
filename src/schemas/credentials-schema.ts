@@ -4,7 +4,7 @@ export const credentialsSchema = z.object({
   username: z
     .string()
     .min(3, 'Nome de usuário precisa ter pelo menos 3 caracteres')
-    .max(32, 'Nome de usuário precisa ser menor que 40 caracters')
+    .max(32, 'Nome de usuário precisa ser menor que 32 caracters')
     .regex(
       /^[a-zA-Z0-9_]+$/,
       'Nome de usuário precisa ter somente letras, números e sublinhado (_)'

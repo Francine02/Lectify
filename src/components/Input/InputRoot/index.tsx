@@ -22,7 +22,7 @@ export function InputRoot({
           id={id}
           {...props}
           className={cn(
-            'py-2.5 sm:py-3 px-4 block w-full rounded-lg sm:text-sm disabled:opacity-50 disabled:pointer-events-none',
+            'py-2.5 sm:py-3 px-4 pr-8 block w-full rounded-lg sm:text-sm disabled:opacity-50 disabled:pointer-events-none',
             errors ? errorColor : normalColor,
             className
           )}

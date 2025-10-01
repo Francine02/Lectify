@@ -2,5 +2,5 @@ import { PersonalInformationData } from '@/app/(public)/cadastro/informacoes-pes
 import { ApiResponse, authRequest } from '../auth-request';
 
 export const registerRequest = async (data: PersonalInformationData): Promise<ApiResponse> => {
-  return authRequest('post', '/register', { data });
+  return authRequest('post', '/register', data);
 };

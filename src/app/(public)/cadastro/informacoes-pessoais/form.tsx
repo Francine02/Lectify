@@ -8,6 +8,8 @@ import { StrongPassword } from '@/components/StrongPassword';
 import { registerRequest } from '@/service/auth/register-request';
 import { useState } from 'react';
 import { Error } from '@/components/Error';
+import { setStep } from '../auth-step';
+import { useRouter } from 'next/navigation';
 
 export function PersonalInformationForm() {
   const {
@@ -18,6 +20,7 @@ export function PersonalInformationForm() {
     resolver: zodResolver(personalInformationSchema),
   });
   const [error, setError] = useState<string>();
+  const router = useRouter();
 
   const onSubmit: SubmitHandler<PersonalInformationData> = async (data) => {
     const email = sessionStorage.getItem('email') ?? '';
@@ -34,6 +37,8 @@ export function PersonalInformationForm() {
       setError(result.error?.message);
       return;
     }
+    await setStep();
+    router.push('/');
   };
 
   return (

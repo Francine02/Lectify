@@ -1,8 +1,8 @@
 import { errorColor, normalColor } from '@/constants/form/form-colors';
 import { cn } from '@/utils/cn';
-import { CheckCodeFormInputs } from 'app/(public)/cadastro/verificar-codigo/check-code-schema';
 import { InputCodeProps } from './InputCodeProps';
 import { Error } from '@/components/Error';
+import { CheckCodeFormInputs } from 'schemas/code-schema';
 
 export function InputCode({
   label,
@@ -28,6 +28,7 @@ export function InputCode({
               key={i}
               id={`${id}-${i}`}
               {...register(fieldName)}
+              defaultValue=""
               {...props}
               maxLength={1}
               type="tel"

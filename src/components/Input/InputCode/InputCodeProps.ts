@@ -1,6 +1,6 @@
-import { CheckCodeData } from 'app/(public)/cadastro/verificar-codigo/check-code-schema';
 import { InputHTMLAttributes } from 'react';
 import { UseFormRegister } from 'react-hook-form';
+import { CheckCodeFormInputs } from 'schemas/code-schema';
 
 export interface InputCodeProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
@@ -8,5 +8,5 @@ export interface InputCodeProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: string;
   errors?: boolean;
   helperText?: string;
-  register: UseFormRegister<CheckCodeData>;
+  register: UseFormRegister<CheckCodeFormInputs>;
 }

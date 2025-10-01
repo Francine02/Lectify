@@ -31,7 +31,7 @@ export async function authRequest<T>(
       success: false,
       error: {
         code: error.code,
-        message: error.response.data.error,
+        message: error.response?.data?.error,
       },
     };
   }

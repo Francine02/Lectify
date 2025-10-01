@@ -1,7 +1,15 @@
-import { credentialsSchema } from 'schemas/credentials-schema';
+import { passwordSchema } from 'schemas/password-schema';
 import z from 'zod';
 
-export const personalInformationSchema = credentialsSchema.extend({
+export const personalInformationSchema = passwordSchema.extend({
+  username: z
+    .string()
+    .min(3, 'Nome de usuário precisa ter pelo menos 3 caracteres')
+    .max(32, 'Nome de usuário precisa ser menor que 32 caracters')
+    .regex(
+      /^[a-zA-Z0-9_]+$/,
+      'Nome de usuário precisa ter somente letras, números e sublinhado (_)'
+    ),
   firstname: z
     .string()
     .min(3, 'Nome precisa ter pelo menos 3 caracteres')

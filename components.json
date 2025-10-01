@@ -16,7 +16,7 @@
     "context": "@/context",
     "i18n": "@/i18n",
     "layouts": "@/layouts",
-    "pages": "@/pages",
+    "app": "@/app",
     "screens": "@/screens",
     "service": "@/service",
     "style": "@/style",

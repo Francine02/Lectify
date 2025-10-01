@@ -27,17 +27,18 @@ export function LoginForm() {
       setError(result.error?.message);
       return;
     }
+    alert('LOGADOOOO');
   };
 
   return (
     <form className="space-y-2" onSubmit={handleSubmit(onSubmit)}>
       <h1 className="text-title font-black text-center mb-10 ">Login</h1>
       <Input.Root
-        {...register('username')}
-        errors={!!errors.username}
-        helperText={errors.username?.message}
-        label="Nome de usuário"
-        placeholder="exemplo12"
+        {...register('email')}
+        errors={!!errors.email}
+        helperText={errors.email?.message}
+        label="Email"
+        placeholder="exemplo@gmail.com"
       />
       <Input.Password
         {...register('password')}

@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { RegisterForm } from './form';
+import { CheckEmailForm } from './form';
 
 export const metadata: Metadata = {
   //TODO: colocar a url das imagens
@@ -30,8 +30,6 @@ export const metadata: Metadata = {
   },
 };
 
-function Register() {
-  return <RegisterForm />;
+export default async function RegisterPage() {
+  return <CheckEmailForm />;
 }
-
-export default Register;

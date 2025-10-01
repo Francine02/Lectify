@@ -5,20 +5,21 @@ import { checkEmailRequest } from '@/service/auth/check-email-request';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'next/navigation';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { RegisterData, registerSchema } from './register-schema';
+import { EmailData, emailSchema } from 'schemas/email-schema';
+import { setStep } from './auth-step';
 
-export function RegisterForm() {
+export function CheckEmailForm() {
   const {
     register,
     handleSubmit,
     setError,
     formState: { errors, isSubmitting },
-  } = useForm<RegisterData>({
-    resolver: zodResolver(registerSchema),
+  } = useForm<EmailData>({
+    resolver: zodResolver(emailSchema),
   });
   const router = useRouter();
 
-  const onSubmit: SubmitHandler<RegisterData> = async (data) => {
+  const onSubmit: SubmitHandler<EmailData> = async (data) => {
     const result = await checkEmailRequest(data);
 
     if (!result.success) {
@@ -30,6 +31,8 @@ export function RegisterForm() {
     }
 
     sessionStorage.setItem('email', data.email);
+
+    await setStep(1);
     router.push('/cadastro/verificar-codigo');
   };
 

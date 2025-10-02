@@ -1,5 +1,5 @@
 'use client';
-import { Button } from '@/components/button';
+import { Button } from '@/components/Button';
 import { Input } from '@/components/Input';
 import { PersonalInformationData, personalInformationSchema } from './personal-information-schema';
 import { SubmitHandler, useForm } from 'react-hook-form';
@@ -83,7 +83,7 @@ export function PersonalInformationForm() {
       <StrongPassword />
       {error && <Error text={error} />}
 
-      <Button className="mt-10 md:mt-12 mb-4" type="submit" loading={isSubmitting}>
+      <Button className="mt-10 md:mt-12 mb-4" type="submit" isLoading={isSubmitting}>
         Cadastrar
       </Button>
     </form>

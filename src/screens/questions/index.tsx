@@ -1,5 +1,5 @@
 import Animated from '@/components/Animations';
-import { Button } from '@/components/button';
+import { Button } from '@/components/Button';
 import { Modal } from '@/components/Modal';
 import { PageBlank } from '@/components/PageBlank';
 import { Option } from '@/components/questions/options/Option';

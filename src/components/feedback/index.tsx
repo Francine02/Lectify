@@ -2,7 +2,7 @@ import emailjs from '@emailjs/browser';
 import { Dispatch, SetStateAction, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import { Button } from '../button';
+import { Button } from '../Button';
 import { Error } from '../Error';
 import { Modal } from '../Modal';
 import { PageBlank } from '../PageBlank';

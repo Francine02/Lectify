@@ -1,6 +1,6 @@
 import { useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
-import { Button } from '../../button';
+import { Button } from '../../Button';
 
 export function InputUrl({ onClick, loading }: { onClick: () => void; loading: boolean }) {
   const { t } = useTranslation();

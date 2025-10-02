@@ -1,8 +1,8 @@
 import { errorColor, normalColor } from '@/constants/form/form-colors';
 import { cn } from '@/utils/cn';
 import { InputCodeProps } from './InputCodeProps';
-import { Error } from '@/components/Error';
 import { CheckCodeFormInputs } from 'schemas/code-schema';
+import { Error } from '@/components/Error';
 
 export function InputCode({
   label,

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Feedback } from '../feedback';
 import { PointerDemo } from '../animationsMagicUi/Pointer';
-import { Button } from '../button';
+import { Button } from '../Button';
 import { useTranslation } from 'react-i18next';
 
 export function ButtonFeedback() {

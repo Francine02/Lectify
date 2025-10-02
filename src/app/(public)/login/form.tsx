@@ -4,7 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { LoginData, loginSchema } from './login-schema';
-import { Button } from '@/components/button';
+import { Button } from '@/components/Button';
 import { useState } from 'react';
 import { loginRequest } from '@/service/auth/login-request';
 import { Error } from '@/components/Error';
@@ -56,7 +56,7 @@ export function LoginForm() {
         Esqueceu a senha?
       </Link>
 
-      <Button loading={isSubmitting} className="mt-10 md:mt-12 mb-4" type="submit">
+      <Button isLoading={isSubmitting} className="mt-10 md:mt-12 mb-4" type="submit">
         Entrar
       </Button>
 

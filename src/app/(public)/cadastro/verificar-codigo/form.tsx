@@ -1,11 +1,11 @@
 'use client';
-import { Button } from '@/components/button';
+import { Button } from '@/components/Button';
 import { Input } from '@/components/Input';
 import { ResendCode } from '@/components/ResendCode';
 import { useResendCode } from '@/hooks/useResendCode';
 import { checkEmailRequest } from '@/service/auth/check-email-request';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { redirect, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { CheckCodeFormInputs, checkCodeSchema } from 'schemas/code-schema';
 import { setStep } from '../auth-step';
@@ -60,7 +60,7 @@ export function CheckCodeForm() {
       />
       <ResendCode timer={timer} onResend={handleResend} />
 
-      <Button className="mt-10 md:mt-12 mb-4" type="submit" loading={isSubmitting}>
+      <Button className="mt-10 md:mt-12 mb-4" type="submit" isLoading={isSubmitting}>
         Avançar
       </Button>
     </form>

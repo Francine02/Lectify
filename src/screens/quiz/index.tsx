@@ -1,4 +1,4 @@
-import { Button } from '@/components/button';
+import { Button } from '@/components/Button';
 import { Checkbox } from '@/components/Checkbox';
 import { Error } from '@/components/Error';
 import { LogoPink } from '@/components/logos/LogoPink';

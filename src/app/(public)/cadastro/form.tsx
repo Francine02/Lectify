@@ -1,5 +1,5 @@
 'use client';
-import { Button } from '@/components/button';
+import { Button } from '@/components/Button';
 import { Input } from '@/components/Input';
 import { checkEmailRequest } from '@/service/auth/check-email-request';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -50,7 +50,7 @@ export function CheckEmailForm() {
         placeholder="exemplo@gmail.com"
       />
 
-      <Button className="mt-10 md:mt-12 mb-4" type="submit" loading={isSubmitting}>
+      <Button className="mt-10 md:mt-12 mb-4" type="submit" isLoading={isSubmitting}>
         Enviar
       </Button>
     </form>

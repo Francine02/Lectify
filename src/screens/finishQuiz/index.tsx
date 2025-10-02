@@ -1,6 +1,6 @@
 import { ConfettiDemo } from '@/components/animationsMagicUi/Confetti';
 import { Score } from '@/components/animationsMagicUi/Score';
-import { Button } from '@/components/button';
+import { Button } from '@/components/Button';
 import { ButtonFeedback } from '@/components/ButtonFeedback';
 import { useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';

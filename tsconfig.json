@@ -11,6 +11,7 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
     "jsx": "preserve",
     "incremental": true,
     "plugins": [
@@ -24,14 +25,12 @@
       "@/constants/*": ["constants/*"],
       "@/context/*": ["context/*"],
       "@/i18n/*": ["i18n/*"],
-      "@/layouts/*": ["layouts/*"],
       "@/app/*": ["app/*"],
       "@/screens/*": ["screens/*"],
       "@/service/*": ["service/*"],
-      "@/style*": ["style*"],
+      "@/style/*": ["style/*"],
       "@/types/*": ["types/*"],
       "@/hooks/*": ["hooks/*"],
-      "@/lib/*": ["lib/*"],
       "@/utils/*": ["utils/*"]
     }
   },

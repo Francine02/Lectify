@@ -15,14 +15,12 @@
     "constants": "@/constants",
     "context": "@/context",
     "i18n": "@/i18n",
-    "layouts": "@/layouts",
     "app": "@/app",
     "screens": "@/screens",
     "service": "@/service",
     "style": "@/style",
     "types": "@/types",
     "hooks": "@/hooks",
-    "lib": "@/lib",
     "utils": "@/utils"
   },
   "iconLibrary": "lucide"

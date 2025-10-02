@@ -1,22 +1,22 @@
 import { cn } from '@/utils/cn';
-import { Loading } from '../Loading';
+import { Loading } from '../loading';
 import { ButtonProps } from './ButtonProps';
 
-export function Button({ children, loading, className, ...props }: ButtonProps) {
+export function Button({ children, isLoading, className, ...props }: ButtonProps) {
   return (
     <button
-      aria-busy={loading}
-      disabled={loading || props.disabled}
+      aria-busy={isLoading}
+      disabled={isLoading || props.disabled}
       className={cn(
         'w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent text-white transition',
-        loading || props.disabled
+        isLoading || props.disabled
           ? 'bg-gray-400 focus:bg-gray-400 cursor-not-allowed opacity-70'
           : 'bg-rose-700 hover:brightness-95 focus:brightness-110 cursor-pointer focus:outline-hidden',
         className
       )}
       {...props}
     >
-      {loading ? <Loading /> : children}
+      {isLoading ? <Loading /> : children}
     </button>
   );
 }

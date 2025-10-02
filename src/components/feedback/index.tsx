@@ -6,7 +6,6 @@ import { Button } from '../Button';
 import { Error } from '../Error';
 import { Modal } from '../Modal';
 import { PageBlank } from '../PageBlank';
-import { Input } from './input/Input';
 
 export function Feedback({ showModal }: { showModal: Dispatch<SetStateAction<boolean>> }) {
   const { t } = useTranslation();
@@ -55,7 +54,7 @@ export function Feedback({ showModal }: { showModal: Dispatch<SetStateAction<boo
           {/* <Title className="text-2xl sm:text-3xl mb-5" emphasis={t('footer.docs')} /> */}
 
           <form onSubmit={handleSubmit(onSubmit)} className="flex-col space-y-4 p-2">
-            <Input
+            {/* <Input
               errorMessage={errors?.name?.message}
               errors={!!errors.name}
               {...register('name', {
@@ -81,7 +80,7 @@ export function Feedback({ showModal }: { showModal: Dispatch<SetStateAction<boo
               })}
               type={'text'}
               placeholder={t('feedback.email')}
-            />
+            /> */}
 
             <div className="relative">
               <textarea
@@ -94,14 +93,14 @@ export function Feedback({ showModal }: { showModal: Dispatch<SetStateAction<boo
               {errors.message && <Error text={errors.message.message} />}
             </div>
 
-            <Button
+            {/* <Button
               disabled={status === 'loading'}
-              loading={status === 'loading'}
+              isLoading={status === 'loading'}
               text={t('hero.page5.send')}
               type="submit"
               secondary
               className={`text-secondary-phone py-1.5 sm:py-2 w-72 mt-5 sm:w-96 mx-auto text-gray-50 cursor-pointer font-black rounded-lg bg-gradient-to-r from-rosa via-rosa-secundary to-bege shadow-[0_3px_10px_rgb(0,0,0,0.2)]`}
-            />
+            /> */}
           </form>
 
           {status === 'error' && (

@@ -3,11 +3,11 @@ import { CheckEmailForm } from './form';
 
 export const metadata: Metadata = {
   //TODO: colocar a url das imagens
-  title: 'Lectify | Cadastro',
+  title: 'Cadastro | Lectify',
   description:
     'Crie sua conta grátis e comece a transformar PDFs em questões e gerar resumos de vídeos do YouTube.',
   openGraph: {
-    title: 'Lectify | Cadastro',
+    title: 'Cadastro | Lectify',
     description: 'Entre agora para usar nossa plataforma de estudos com PDFs e YouTube.',
     url: process.env.NEXT_PUBLIC_URL,
     siteName: 'Lectify',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lectify | Cadastro',
+    title: 'Cadastro | Lectify',
     description: 'Comece já a usar nossa plataforma de estudos.',
     images: '',
   },

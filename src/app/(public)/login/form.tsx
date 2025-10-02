@@ -49,7 +49,12 @@ export function LoginForm() {
       />
       {error && <Error text={error} />}
 
-      <p className="text-gray-600 hover:underline cursor-pointer text-sm mt-1">Esqueceu a senha?</p>
+      <Link
+        href="/esqueci-senha"
+        className="text-gray-600 hover:underline cursor-pointer text-sm mt-1"
+      >
+        Esqueceu a senha?
+      </Link>
 
       <Button loading={isSubmitting} className="mt-10 md:mt-12 mb-4" type="submit">
         Entrar

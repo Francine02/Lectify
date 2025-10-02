@@ -27,22 +27,17 @@ export function InputRoot({
             className
           )}
         />
-        {errors ? (
-          <div className="absolute inset-y-0 end-0 flex items-center pointer-events-none pe-3">
-            <MdErrorOutline className="text-red-600" />
-          </div>
-        ) : (
-          children
-        )}
+        {children}
       </div>
       {(errors || helperText) && (
         <p
           className={cn(
-            'text-xs md:text-sm mt-2 mb-2.5',
+            'text-xs md:text-sm mt-2 mb-2.5 flex items-center gap-1',
             errors ? 'text-red-600' : 'text-gray-500'
           )}
           id={id}
         >
+          {errors && <MdErrorOutline className={cn(errors ? 'text-red-600' : 'text-gray-500')} />}
           {helperText}
         </p>
       )}

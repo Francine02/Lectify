@@ -27,7 +27,7 @@ export function LoginForm() {
       setError(result.error?.message);
       return;
     }
-    alert('LOGADOOOO');
+    alert('Seja bem-vindo (a)! Ainda estamos em construção');
   };
 
   return (

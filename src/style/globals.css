@@ -18,14 +18,13 @@
 }
 
 @theme {
-  --color-rose-500: oklch(89% 0.058 10.001);
+  --color-white: #fefcff;
 
-  --color-rose-600: #f28599;
-  --color-green-600: #8c7a20;
+  --color-purple-500: #5d3b8c;
 
-  --color-blue-700: #212045;
-  --color-rose-700: #732449;
-  --color-green-700: #42440f;
+  --color-purple-600: #5b3580;
+
+  --color-purple-700: #312057;
 
   --text-title: clamp(1.5rem, 1rem + 1vw, 2.2rem);
   --text-secondary: clamp(0.8rem, 0.5rem + 0.5vw, 1rem);

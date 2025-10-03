@@ -1,4 +1,4 @@
 export const errorColor = 'border-red-500 focus:border-red-500 focus:ring-red-500';
 
 export const normalColor =
-  'focus:border-rose-600 focus:ring-rose-500 border-gray-200 hover:border-rose-200';
+  'focus:border-purple-600 focus:ring-purple-500 border-gray-200 hover:border-purple-500';

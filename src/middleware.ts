@@ -15,7 +15,7 @@ export function middleware(request: NextRequest) {
   const publicRoute = publicRoutes.find(
     (route) => path === route.path || path.startsWith(`${route.path}/`)
   );
-  const token = request.cookies.get('token'); //TODO: verificar aqui onde vai ser guardado o token
+  const token = request.cookies.get('Token')?.value;
 
   if (!token && publicRoute) return NextResponse.next();
 
@@ -29,11 +29,6 @@ export function middleware(request: NextRequest) {
     const redirectUrl = request.nextUrl.clone();
     redirectUrl.pathname = '/';
     return NextResponse.redirect(redirectUrl);
-  }
-
-  if (token && !publicRoute) {
-    //TODO: verificar se o token esta expirado
-    return NextResponse.next();
   }
 
   return NextResponse.next();

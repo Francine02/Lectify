@@ -1,4 +1,5 @@
-import { ApiResponse, authRequest } from '../auth-request';
+import { ApiResponse } from '@/types/ApiResponse';
+import { authRequest } from '../auth-request';
 
 type ChangePasswordRequest = {
   email: string;
@@ -7,5 +8,5 @@ type ChangePasswordRequest = {
 };
 
 export const changePasswordRequest = (data: ChangePasswordRequest): Promise<ApiResponse> => {
-  return authRequest('post', '/pong_verify_email_reset_password', data);
+  return authRequest('post', '/pong_email_reset_password', data);
 };

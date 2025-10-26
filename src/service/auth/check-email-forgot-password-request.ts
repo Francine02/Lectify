@@ -1,4 +1,5 @@
-import { ApiResponse, authRequest } from '../auth-request';
+import { ApiResponse } from '@/types/ApiResponse';
+import { authRequest } from '../auth-request';
 
 export const checkEmailForgotPasswordRequest = (email: string): Promise<ApiResponse> => {
   const payload = {
@@ -7,5 +8,5 @@ export const checkEmailForgotPasswordRequest = (email: string): Promise<ApiRespo
     reset_password_page_url: 'alterar-senha',
   };
 
-  return authRequest('post', '/ping_check_email_reset_password', payload);
+  return authRequest('post', '/ping_email_reset_password', payload);
 };

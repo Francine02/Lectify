@@ -1,14 +1,6 @@
 import axios from 'axios';
 import { BASE_URL } from './config/axios-config';
-
-export type ApiResponse<T = any> = {
-  success: boolean;
-  data?: T;
-  error?: {
-    code: string;
-    message: string;
-  };
-};
+import { ApiResponse } from '../types/ApiResponse';
 
 export async function authRequest<T>(
   method: 'post',

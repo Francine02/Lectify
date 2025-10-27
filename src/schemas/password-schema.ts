@@ -3,6 +3,7 @@ import z from 'zod';
 export const passwordSchema = z.object({
   password: z
     .string()
+    .trim()
     .min(8, 'Senha precisa ter pelo menos 8 caracteres')
     .max(64, 'Senha precisa ser menor que 64 caracteres')
     .regex(/(?=.*[a-z])/, 'Senha precisa ter pelo menos uma letra minúscula')

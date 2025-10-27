@@ -24,7 +24,7 @@ export default function PrelineScript() {
       if (window.HSStaticMethods && typeof window.HSStaticMethods.autoInit === 'function') {
         window.HSStaticMethods.autoInit();
       }
-    }, 100);
+    }, 1000);
   }, [path]);
 
   return null;

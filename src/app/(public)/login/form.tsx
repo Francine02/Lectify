@@ -8,6 +8,9 @@ import { Button } from '@/components/Button';
 import { useState } from 'react';
 import { loginRequest } from '@/service/auth/login-request';
 import { Error } from '@/components/Error';
+import { authStorage } from '@/utils/storage/save-auth-storage';
+import { useRouter } from 'next/navigation';
+import { saveInformationsInStorage } from '@/utils/storage/save-informations-storage';
 
 export function LoginForm() {
   const {
@@ -18,6 +21,7 @@ export function LoginForm() {
     resolver: zodResolver(loginSchema),
   });
   const [error, setError] = useState<string>();
+  const router = useRouter();
 
   const onSubmit: SubmitHandler<LoginData> = async (data) => {
     setError('');
@@ -27,7 +31,9 @@ export function LoginForm() {
       setError(result.error?.message);
       return;
     }
-    alert('Seja bem-vindo (a)! Ainda estamos em construção');
+    authStorage(result.data);
+    saveInformationsInStorage(result.data.profile);
+    router.push('/minha-conta');
   };
 
   return (

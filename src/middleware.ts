@@ -4,8 +4,6 @@ const publicRoutes = [
   { path: '/login', whenAuthenticated: 'redirect' },
   { path: '/cadastro', whenAuthenticated: 'redirect' },
   { path: '/esqueci-senha', whenAuthenticated: 'redirect' },
-  { path: '/minha-conta', whenAuthenticated: 'redirect' }, //TODO: remover aqui
-
   { path: '/alterar-senha', whenAuthenticated: 'redirect' },
   { path: '/inicio', whenAuthenticated: 'redirect' },
 ] as const;

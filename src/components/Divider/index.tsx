@@ -1,6 +1,6 @@
 import { cn } from '@/utils/cn';
 
-export function Divider({ text, className }: { className?: string; text: string }) {
+export function Divider({ text, className }: { className?: string; text?: string }) {
   return (
     <div
       className={cn(

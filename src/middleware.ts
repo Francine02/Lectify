@@ -15,7 +15,7 @@ export function middleware(request: NextRequest) {
   const publicRoute = publicRoutes.find(
     (route) => path === route.path || path.startsWith(`${route.path}/`)
   );
-  const token = request.cookies.get('Token')?.value;
+  const token = request.cookies.get('token')?.value;
 
   if (!token && publicRoute) return NextResponse.next();
 

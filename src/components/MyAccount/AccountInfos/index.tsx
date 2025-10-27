@@ -1,6 +1,7 @@
 'use client';
 import { Loading } from '@/components/Loading';
 import { fieldsAccount } from '@/constants/form/fields-account';
+import { InformationsAccountType } from '@/types/InformationsAccountType';
 import { getInformationItem } from '@/utils/informations/get-informations';
 import { useEffect, useState } from 'react';
 

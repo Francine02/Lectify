@@ -1,3 +1,4 @@
+import { InformationsAccountType } from '@/types/InformationsAccountType';
 import { formatDatePt } from '@/utils/formatters/formatDatePt';
 
 export const fieldsAccount = (info: InformationsAccountType) => [

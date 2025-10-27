@@ -27,7 +27,7 @@
   --color-purple-700: #312057;
 
   --text-title: clamp(1.5rem, 1rem + 1vw, 2.2rem);
-  --text-secondary: clamp(0.8rem, 0.5rem + 0.5vw, 1rem);
+  --text-subtitle: clamp(0.8rem, 0.5rem + 0.5vw, 1rem);
 }
 
 :root {

@@ -1,4 +1,5 @@
-import { authRequest, ApiResponse } from '../auth-request';
+import { ApiResponse } from '@/types/ApiResponse';
+import { authRequest } from '../auth-request';
 
 type CodeRequest = {
   code: string;

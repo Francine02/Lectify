@@ -7,6 +7,6 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default async function ChangePasswordPage() {
+export default function ChangePasswordPage() {
   return <ChangePasswordForm />;
 }

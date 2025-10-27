@@ -1,5 +1,5 @@
 import { cn } from '@/utils/cn';
-import { Loading } from '../loading';
+import { Loading } from '../Loading';
 import { ButtonProps } from './ButtonProps';
 
 export function Button({ children, isLoading, className, ...props }: ButtonProps) {

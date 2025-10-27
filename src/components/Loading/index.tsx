@@ -1,8 +1,10 @@
-export function Loading() {
+import { cn } from '@/utils/cn';
+
+export function Loading({ className }: { className?: string }) {
   return (
     <svg
       aria-hidden="true"
-      className="w-5 h-6 text-gray-100 animate-spin fill-blue-400 mx-auto"
+      className={cn('size-5 text-gray-50 animate-spin fill-blue-400 mx-auto', className)}
       viewBox="0 0 100 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

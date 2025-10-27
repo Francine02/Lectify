@@ -38,6 +38,7 @@ export function PersonalInformationForm() {
       return;
     }
     await setStep();
+    sessionStorage.removeItem('email');
     router.push('/');
   };
 

@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 
 export function useImageUpload() {
   const [preview, setPreview] = useState<string>('/assets/avatar.png');
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loadingAction, setLoadingAction] = useState<'upload' | 'remove' | null>(null);
 
   const inputRef = useRef<HTMLInputElement | null>(null);
 
@@ -21,34 +21,37 @@ export function useImageUpload() {
     const file = e.target.files?.[0];
     if (!file) return;
 
+    setLoadingAction('upload');
     handleSubmit(file);
   };
 
   const handleRemove = () => {
     if (inputRef.current) inputRef.current.value = '';
 
+    setLoadingAction('remove');
     handleSubmit('');
   };
 
-  const handleSubmit = (file: File | string) => {
-    setLoading(true);
-
-    setTimeout(async () => {
+  const handleSubmit = async (file: File | string) => {
+    try {
       const response = await putImageProfile(file);
 
-      setLoading(false);
-
-      if (!response.success) toast.error('Falha ao alterar imagem');
+      if (!response.success) {
+        toast.error('Falha ao alterar imagem');
+        return;
+      }
 
       toast.success('Imagem atualizada!');
-      saveInformationsInStorage(response.data.image_profile ?? '');
+      saveInformationsInStorage({ image_profile: response.data.image_profile ?? '' });
       setPreview(response.data.image_profile ?? '/assets/avatar.png');
-    }, 2000);
+    } finally {
+      setLoadingAction(null);
+    }
   };
 
   return {
     preview,
-    loading,
+    loadingAction,
     inputRef,
     handleFileChange,
     handleRemove,

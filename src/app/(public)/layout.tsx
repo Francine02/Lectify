@@ -7,13 +7,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {children}
       </section>
 
-      <section className="relative bg-purple-700 order-1 md:order-2 h-36 md:h-full">
+      <aside className="relative bg-purple-700 order-1 md:order-2 h-36 md:h-full">
         <Logo className="absolute right-5 lg:right-10 top-6 z-10" />
         <img
           src="/assets/background.jpeg"
+          alt="Plano de fundo em pixel art roxo"
           className="absolute inset-0 w-full h-full md:object-fill object-cover"
         />
-      </section>
+      </aside>
     </main>
   );
 }

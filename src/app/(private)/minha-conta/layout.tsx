@@ -3,7 +3,7 @@ import { UploadImage } from '@/components/UploadImage';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="w-full">
+    <section className="w-full">
       <h1 className="text-title font-semibold border-b border-gray-200 w-full mb-2 pl-10 sm:pl-0">
         Meu perfil
       </h1>
@@ -16,6 +16,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
         {children}
       </div>
-    </div>
+    </section>
   );
 }

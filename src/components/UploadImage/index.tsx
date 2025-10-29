@@ -3,7 +3,10 @@ import { useImageUpload } from '@/hooks/useImageUpload';
 import { Button } from '../Button';
 
 export function UploadImage() {
-  const { preview, inputRef, handleFileChange, handleRemove, loading } = useImageUpload();
+  const { preview, inputRef, handleFileChange, handleRemove, loadingAction } = useImageUpload();
+
+  const isRemovingImage = loadingAction === 'remove';
+  const isChangingImage = loadingAction === 'upload';
 
   const isDefaultImage = preview === '/assets/avatar.png';
 
@@ -26,8 +29,8 @@ export function UploadImage() {
         <Button
           type="button"
           onClick={handleRemove}
-          disabled={loading || isDefaultImage}
-          isLoading={loading && !isDefaultImage}
+          disabled={loadingAction !== null || isDefaultImage}
+          isLoading={isRemovingImage}
           className="py-1.5 bg-white border border-gray-300 text-gray-800 font-semibold hover:brightness-90 text-xs md:text-sm w-32 md:w-40"
         >
           Excluir imagem
@@ -36,8 +39,8 @@ export function UploadImage() {
           type="button"
           onClick={() => inputRef.current?.click()}
           className="py-1.5 text-xs md:text-sm w-20 md:w-24 bg-purple-600"
-          isLoading={loading && isDefaultImage}
-          disabled={loading}
+          isLoading={isChangingImage}
+          disabled={loadingAction !== null}
         >
           Alterar
         </Button>

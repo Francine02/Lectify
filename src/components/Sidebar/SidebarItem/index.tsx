@@ -4,14 +4,19 @@ import { SidebarItemProps } from './SidebarItemProps';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/utils/cn';
 
-export function SidebarItem({ link, icon: Icon, name }: SidebarItemProps) {
+export function SidebarItem({ link, icon: Icon, name, action }: SidebarItemProps) {
   const path = usePathname();
 
   const isActive = path === link;
 
+  const handleClick = () => {
+    if (action) action();
+  };
+
   return (
     <div className="hs-tooltip relative [--placement:right] block w-full ml-[1.35rem] drop-shadow-sm">
       <Link
+        onClick={handleClick}
         className={cn(
           'hs-tooltip-toggle flex h-9.5 items-center p-2 text-sm font-semibold rounded-l-lg border border-transparent text-white hover:bg-gray-100 hover:text-purple-700 focus:outline-hidden focus:bg-gray-100 focus:text-purple-700 disabled:opacity-50 disabled:pointer-events-none transition-colors',
           isActive && 'bg-gray-100 text-purple-700'

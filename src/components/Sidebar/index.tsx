@@ -23,7 +23,13 @@ export function Sidebar() {
 
         <SidebarFooter>
           {sidebarItemsFooter.map((item) => (
-            <SidebarItem icon={item.icon} name={item.name} link={item.link} key={item.name} />
+            <SidebarItem
+              action={item.action}
+              icon={item.icon}
+              name={item.name}
+              link={item.link}
+              key={item.name}
+            />
           ))}
         </SidebarFooter>
       </SidebarContainer>

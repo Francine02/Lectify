@@ -11,7 +11,7 @@ const daysUntilExpiry = (exp: number) => {
 };
 
 export const tokenStorage = (token: string) => {
-  Cookies.set('token', token, { expires: 7, path: '/', sameSite: 'strict' });
+  Cookies.set('token', token, { expires: 7, path: '/', sameSite: 'lax' });
 };
 
 export const authStorage = (data: AuthStorageType) => {

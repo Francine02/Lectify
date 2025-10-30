@@ -34,7 +34,7 @@ export function ConfirmDeleteAccountForm() {
   const current = deleteAccount.find((item) => item.key === status);
 
   return (
-    <section className="m-auto">
+    <section className="min-h-screen flex flex-col justify-center items-center text-center">
       {status === 'loading' ? (
         <Loading className="size-12 mb-10" />
       ) : (

@@ -1,7 +1,7 @@
 import { FaCheck } from 'react-icons/fa';
 import { MdError } from 'react-icons/md';
 
-export const deleteAccount = [
+export const DELETE_ACCOUNT = [
   {
     key: 'success',
     icon: FaCheck,

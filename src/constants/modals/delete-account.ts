@@ -1,6 +1,6 @@
 import { IoWarning } from 'react-icons/io5';
 
-export const deleteAccount = {
+export const DELETE_ACCOUNT = {
   id: 'delete-account-modal',
   title: 'Deletar Conta',
   icon: IoWarning,

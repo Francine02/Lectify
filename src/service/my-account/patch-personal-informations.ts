@@ -1,14 +1,7 @@
+import { PersonalInformationData } from '@/app/(private)/minha-conta/personal-information-schema';
 import { ApiResponse } from '@/types/ApiResponse';
 import { baseRequest } from '../base-request';
 
-type PatchPersonalInformationsRequest = {
-  password?: string;
-  firstname?: string;
-  lastname?: string;
-};
-
-export const patchPersonalInformations = (
-  data: PatchPersonalInformationsRequest
-): Promise<ApiResponse> => {
+export const patchPersonalInformations = (data: PersonalInformationData): Promise<ApiResponse> => {
   return baseRequest('patch', '/update_profile', data);
 };

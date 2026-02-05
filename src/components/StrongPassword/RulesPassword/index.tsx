@@ -1,11 +1,11 @@
-import { passwordStrongRules } from '@/constants/form/password-strong-rules';
+import { PASSWORD_STRONG_RULES } from '@/constants/form/password-strong-rules';
 import { FaCheck } from 'react-icons/fa';
 import { RiCloseLine } from 'react-icons/ri';
 
 export function RulesPassword() {
   return (
     <>
-      {passwordStrongRules.map((password) => (
+      {PASSWORD_STRONG_RULES.map((password) => (
         <li
           key={password.rules}
           data-hs-strong-password-hints-rule-text={password.rules}

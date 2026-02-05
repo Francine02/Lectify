@@ -1,4 +1,4 @@
-import { errorColor, normalColor } from '@/constants/form/form-colors';
+import { ERROR_COLOR, NORMAL_COLOR } from '@/constants/form/form-colors';
 import { cn } from '@/utils/cn';
 import { MdErrorOutline } from 'react-icons/md';
 import { InputProps } from './InputProps';
@@ -23,7 +23,7 @@ export function InputRoot({
           {...props}
           className={cn(
             'py-2.5 sm:py-3 px-4 pr-8 block w-full rounded-lg sm:text-sm disabled:opacity-50 disabled:pointer-events-none',
-            errors ? errorColor : normalColor,
+            errors ? ERROR_COLOR : NORMAL_COLOR,
             className
           )}
         />

@@ -1,6 +1,6 @@
 'use client';
 import { Loading } from '@/components/Loading';
-import { deleteAccount } from '@/constants/form/delete-account';
+import { DELETE_ACCOUNT } from '@/constants/form/delete-account';
 import { pongDeleteAccount } from '@/service/my-account/pong-delete-account';
 import { clearStorage } from '@/utils/storage/clear-storage';
 import { useParams } from 'next/navigation';
@@ -31,7 +31,7 @@ export function ConfirmDeleteAccountForm() {
     deleteAccount();
   }, []);
 
-  const current = deleteAccount.find((item) => item.key === status);
+  const current = DELETE_ACCOUNT.find((item) => item.key === status);
 
   return (
     <section className="min-h-screen flex flex-col justify-center items-center text-center">

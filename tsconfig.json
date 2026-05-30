@@ -18,48 +18,24 @@
     "forceConsistentCasingInFileNames": true,
     "jsx": "react-jsx",
     "incremental": true,
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
     "plugins": [
       {
         "name": "next"
       }
-    ],
-    "baseUrl": "./src",
-    "paths": {
-      "@/components/*": [
-        "components/*"
-      ],
-      "@/constants/*": [
-        "constants/*"
-      ],
-      "@/context/*": [
-        "context/*"
-      ],
-      "@/app/*": [
-        "app/*"
-      ],
-      "@/service/*": [
-        "service/*"
-      ],
-      "@/style/*": [
-        "style/*"
-      ],
-      "@/types/*": [
-        "types/*"
-      ],
-      "@/hooks/*": [
-        "hooks/*"
-      ],
-      "@/utils/*": [
-        "utils/*"
-      ]
-    }
+    ]
   },
   "include": [
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
     ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts"
+    ".next/dev/types/**/*.ts",
+    "**/*.mts",
+    "**/*.ts",
+    "**/*.tsx"
   ],
   "exclude": [
     "node_modules"

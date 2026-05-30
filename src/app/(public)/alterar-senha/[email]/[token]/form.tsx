@@ -1,12 +1,12 @@
 'use client';
 import { Button } from '@/components/Button';
 import { Input } from '@/components/Input';
+import { CreatePasswordData, createPasswordSchema } from '@/schemas/create-password';
 import { changePasswordRequest } from '@/service/auth/change-password';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useParams, useRouter } from 'next/navigation';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { FaCheck } from 'react-icons/fa6';
-import { CreatePasswordData, createPasswordSchema } from 'schemas/create-password';
 
 export function ChangePasswordForm() {
   const {

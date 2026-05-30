@@ -1,12 +1,12 @@
 'use client';
 import { Button } from '@/components/Button';
 import { Input } from '@/components/Input';
+import { EmailData, emailSchema } from '@/schemas/email-schema';
 import { checkEmailForgotPasswordRequest } from '@/service/auth/check-email-forgot-password-request';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'next/navigation';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { FaCheck } from 'react-icons/fa6';
-import { EmailData, emailSchema } from 'schemas/email-schema';
 
 export function CheckEmailForm() {
   const {

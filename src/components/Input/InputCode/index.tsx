@@ -1,7 +1,7 @@
 import { Error } from '@/components/Error';
 import { ERROR_COLOR, NORMAL_COLOR } from '@/constants/form/form-colors';
+import { CheckCodeFormInputs } from '@/schemas/code-schema';
 import { cn } from '@/utils/cn';
-import { CheckCodeFormInputs } from 'schemas/code-schema';
 import { InputCodeProps } from './InputCodeProps';
 
 export function InputCode({

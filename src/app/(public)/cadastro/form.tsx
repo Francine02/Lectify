@@ -1,11 +1,11 @@
 'use client';
 import { Button } from '@/components/Button';
 import { Input } from '@/components/Input';
+import { EmailData, emailSchema } from '@/schemas/email-schema';
 import { checkEmailRequest } from '@/service/auth/check-email-request';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'next/navigation';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { EmailData, emailSchema } from 'schemas/email-schema';
 import { setStep } from './auth-step';
 
 export function CheckEmailForm() {

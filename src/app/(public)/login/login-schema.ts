@@ -1,5 +1,5 @@
-import { emailSchema } from 'schemas/email-schema';
-import { passwordSchema } from 'schemas/password-schema';
+import { emailSchema } from '@/schemas/email-schema';
+import { passwordSchema } from '@/schemas/password-schema';
 import { z } from 'zod';
 
 export const loginSchema = emailSchema.merge(passwordSchema);

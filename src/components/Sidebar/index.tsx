@@ -1,6 +1,6 @@
 'use client';
-import { sidebarItemsBody } from '@/constants/sidebar/sidebar-items-body';
-import { sidebarItemsFooter } from '@/constants/sidebar/sidebar-items-footer';
+import { SIDEBAR_ITEMS_BODY } from '@/constants/sidebar/sidebar-items-body';
+import { SIDEBAR_ITEMS_FOOTER } from '@/constants/sidebar/sidebar-items-footer';
 import { usePathname } from 'next/navigation';
 import { SidebarBody } from './SidebarBody';
 import { SidebarContainer } from './SidebarContainer';
@@ -16,13 +16,13 @@ export function Sidebar() {
       <SidebarContainer>
         <SidebarHeader />
         <SidebarBody>
-          {sidebarItemsBody.map((item) => (
+          {SIDEBAR_ITEMS_BODY.map((item) => (
             <SidebarItem icon={item.icon} name={item.name} link={item.link} key={item.name} />
           ))}
         </SidebarBody>
 
         <SidebarFooter>
-          {sidebarItemsFooter.map((item) => (
+          {SIDEBAR_ITEMS_FOOTER.map((item) => (
             <SidebarItem
               action={item.action}
               icon={item.icon}

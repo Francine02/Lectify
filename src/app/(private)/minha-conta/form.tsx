@@ -5,15 +5,15 @@ import { patchPersonalInformations } from '@/service/my-account/patch-personal-i
 
 import { Modal } from '@/components/Modal';
 import { AccountInfos } from '@/components/MyAccount/AccountInfos';
-import { deleteAccount } from '@/constants/modals/delete-account';
+import { DELETE_ACCOUNT } from '@/constants/modals/delete-account';
 import { filterDirtyData } from '@/utils/form/filter-data-dirty';
+import { handleDeleteAccount } from '@/utils/handlers/handle-delete-account';
 import { getInformationsSaveInStorage } from '@/utils/informations/get-informations';
 import { saveInformationsInStorage } from '@/utils/storage/save-informations-storage';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import { PersonalInformationData, personalInformationSchema } from './personal-information-schema';
-import { handleDeleteAccount } from '@/utils/handlers/handle-delete-account';
 
 export function MyAccountForm() {
   const info = getInformationsSaveInStorage();
@@ -81,11 +81,11 @@ export function MyAccountForm() {
       </div>
 
       <Modal
-        color={deleteAccount.color}
-        id={deleteAccount.id}
-        icon={deleteAccount.icon}
-        title={deleteAccount.title}
-        message={deleteAccount.mesage}
+        color={DELETE_ACCOUNT.color}
+        id={DELETE_ACCOUNT.id}
+        icon={DELETE_ACCOUNT.icon}
+        title={DELETE_ACCOUNT.title}
+        message={DELETE_ACCOUNT.mesage}
         handleConfirm={handleDeleteAccount}
       />
 
@@ -94,8 +94,8 @@ export function MyAccountForm() {
         className="w-fit py-1.5 text-xs bg-red-400 border-red-500 "
         aria-haspopup="dialog"
         aria-expanded="false"
-        aria-controls={`hs-${deleteAccount.id}`}
-        data-hs-overlay={`#hs-${deleteAccount.id}`}
+        aria-controls={`hs-${DELETE_ACCOUNT.id}`}
+        data-hs-overlay={`#hs-${DELETE_ACCOUNT.id}`}
       >
         Deletar conta
       </Button>

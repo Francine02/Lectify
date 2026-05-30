@@ -19,11 +19,12 @@ export async function authRequest<T>(
       data: response.data,
     };
   } catch (error: any) {
+    const errorMessage = error.response?.data?.error;
     return {
       success: false,
       error: {
         code: error.code,
-        message: error.response?.data?.error,
+        message: errorMessage ?? 'Ocorreu um erro! Por favor, tente novamente mais tarde',
       },
     };
   }

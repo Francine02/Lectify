@@ -1,4 +1,4 @@
-export const passwordStrongRules = [
+export const PASSWORD_STRONG_RULES = [
   {
     rules: 'min-length',
     message: 'Pelo menos 8 caracteres',

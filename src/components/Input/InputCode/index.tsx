@@ -1,8 +1,8 @@
-import { errorColor, normalColor } from '@/constants/form/form-colors';
+import { Error } from '@/components/Error';
+import { ERROR_COLOR, NORMAL_COLOR } from '@/constants/form/form-colors';
+import { CheckCodeFormInputs } from '@/schemas/code-schema';
 import { cn } from '@/utils/cn';
 import { InputCodeProps } from './InputCodeProps';
-import { CheckCodeFormInputs } from 'schemas/code-schema';
-import { Error } from '@/components/Error';
 
 export function InputCode({
   label,
@@ -35,7 +35,7 @@ export function InputCode({
               autoComplete="one-time-code"
               className={cn(
                 'block size-12 text-center rounded-md sm:text-sm [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none disabled:opacity-50 disabled:pointer-events-none',
-                errors ? errorColor : normalColor,
+                errors ? ERROR_COLOR : NORMAL_COLOR,
                 className
               )}
               placeholder="⚬"

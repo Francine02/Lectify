@@ -1,4 +1,4 @@
-export function Progress({value}: {value: string}) {
+export function Progress({ value }: { value: string }) {
     return (
         <div className="relative size-40 w-full">
             <svg className="size-full -rotate-90" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
@@ -8,10 +8,10 @@ export function Progress({value}: {value: string}) {
                     cy="18"
                     r="16"
                     fill="none"
-                    className="stroke-current text-purple-700"
+                    className="stroke-current text-purple-700 transition-all duration-700 ease-out"
                     strokeWidth="2"
-                    stroke-dasharray="100"
-                    stroke-dashoffset={100 - Number(value)}
+                    strokeDasharray="100"
+                    strokeDashoffset={100 - Number(value)}
                     strokeLinecap="round"
                 ></circle>
             </svg>

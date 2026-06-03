@@ -20,8 +20,8 @@ export function IconCircle({ type }: IconCircleProps) {
     const { icon: Icon, bg, iconColor } = iconStyle[type];
 
     return (
-        <div className={cn(bg, 'w-fit rounded-full p-5 mx-auto lg:mx-0')}>
-            <Icon className={cn(iconColor, 'size-10')} />
+        <div className={cn(bg, 'w-fit rounded-full p-5 mx-auto')}>
+            <Icon className={cn(iconColor, 'size-10 ')} />
         </div>
     );
 }

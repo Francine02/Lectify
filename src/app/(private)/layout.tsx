@@ -1,16 +1,45 @@
+import { Topbar } from '@/components/AppShell/Topbar';
+import { Dock } from '@/components/Dock';
+import { RenewalReminder } from '@/components/Plans/RenewalReminder';
+import { ProfileSync } from '@/components/ProfileSync';
 import { Sidebar } from '@/components/Sidebar';
-import { ButtonOpenSidebar } from '@/components/Sidebar/ButtonOpenSidebar';
+import { MobileNav } from '@/components/Sidebar/MobileNav';
 import { Toast } from '@/components/Toast';
+import { TourDialog } from '@/components/Tour/TourDialog';
+import { PomodoroProvider } from '@/contexts/Pomodoro';
+import { StudyQueueProvider } from '@/contexts/StudyQueue';
+import { SummaryJobProvider } from '@/contexts/SummaryJob';
+import { ToolsProvider } from '@/contexts/Tools';
+import { TourProvider } from '@/contexts/Tour';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex w-full sm:px-10 mx-auto sm:py-12 bg-gray-100 min-h-screen">
-      <ButtonOpenSidebar />
-      <Sidebar />
-      <main className="bg-white rounded-lg w-full px-4 py-4 sm:p-6 md:max-w-5xl lg:max-w-10/12 2xl:max-w-6xl sm:m-auto pb-12 sm:pb-6 ">
-        <Toast />
-        {children}
-      </main>
-    </div>
+    <TourProvider>
+      <PomodoroProvider>
+        <ToolsProvider>
+          <SummaryJobProvider>
+            <StudyQueueProvider>
+              <div className="min-h-dvh bg-canvas lg:pl-[96px]">
+                <Sidebar />
+
+                <div className="mx-auto w-full max-w-6xl px-4 pb-28 sm:px-6 lg:pb-12">
+                  <Topbar />
+
+                  <Toast />
+                  <ProfileSync />
+                  <RenewalReminder />
+
+                  {children}
+                </div>
+
+                <MobileNav />
+                <Dock />
+                <TourDialog />
+              </div>
+            </StudyQueueProvider>
+          </SummaryJobProvider>
+        </ToolsProvider>
+      </PomodoroProvider>
+    </TourProvider>
   );
 }

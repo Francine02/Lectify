@@ -1,3 +1,4 @@
+import { DEFAULT_API_ERROR, translateApiError } from '@/constants/errors/api-errors';
 import axios from 'axios';
 import { BASE_URL } from './config/axios-config';
 import { ApiResponse } from '../types/ApiResponse';
@@ -24,7 +25,7 @@ export async function authRequest<T>(
       success: false,
       error: {
         code: error.code,
-        message: errorMessage ?? 'Ocorreu um erro! Por favor, tente novamente mais tarde',
+        message: errorMessage ? translateApiError(errorMessage) : DEFAULT_API_ERROR,
       },
     };
   }

@@ -1,8 +1,6 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
-@import 'tailwindcss';
-
 /* Preline UI */
 @source "./node_modules/preline/dist/*.js";
 @import 'preline/variants.css';
@@ -10,35 +8,170 @@
 /* Plugins */
 @plugin "@tailwindcss/forms";
 
+@theme {
+    /* Tipografia — Inter para UI, Plus Jakarta para títulos */
+    --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+    --font-display: var(--font-display), var(--font-inter), ui-sans-serif, sans-serif;
+
+    --color-white: #ffffff;
+    --color-black: #14141b;
+
+    /* Superfícies — conteúdo claro, como Brainly/Notion */
+    --color-canvas: #f4f4f9;
+    --color-surface: #ffffff;
+    --color-line: #ebebf2;
+    --color-line-strong: #dcdce8;
+    --color-ink: #1b1b26;
+    --color-subtle: #6c6c85;
+    --color-faint: #a2a2b8;
+
+    /* Marca — violeta Lectify.
+       `brand` é o fundo dos botões e `purple-700` o tom de texto: no tema
+       escuro os dois andam em direções opostas, por isso são tokens separados. */
+    --color-brand: #5a2fc9;
+    --color-brand-hover: #6a41ea;
+
+    --color-purple-50: #f5f2ff;
+    --color-purple-100: #eae3fe;
+    --color-purple-200: #d7c9fc;
+    --color-purple-300: #b9a2f8;
+    --color-purple-400: #9b7bf3;
+    --color-purple-500: #7c5cfc;
+    --color-purple-600: #6a41ea;
+    --color-purple-700: #5a2fc9;
+    --color-purple-800: #45239c;
+    --color-purple-900: #2d1769;
+
+    /* Acentos funcionais (tags, status, categorias) */
+    --color-mint-50: #e8fbf4;
+    --color-mint-100: #d2f6e8;
+    --color-mint-500: #00c48c;
+    --color-mint-700: #017a58;
+
+    --color-sun-50: #fff6e5;
+    --color-sun-100: #ffecc9;
+    --color-sun-500: #ffb020;
+    --color-sun-700: #9a6200;
+
+    --color-sky-50: #e9f4ff;
+    --color-sky-100: #d5e9fd;
+    --color-sky-500: #2d9cdb;
+    --color-sky-700: #135f8c;
+
+    --color-coral-50: #ffeeef;
+    --color-coral-100: #ffdcde;
+    --color-coral-500: #ff6b6b;
+    --color-coral-700: #b02b2b;
+
+    --text-title: clamp(1.6rem, 1rem + 1.4vw, 2.4rem);
+    --text-display: clamp(2rem, 1.2rem + 2.6vw, 3.4rem);
+    --text-subtitle: clamp(0.85rem, 0.6rem + 0.4vw, 1rem);
+
+    --radius-card: 1rem;
+
+    --shadow-soft: 0 1px 2px rgb(20 20 40 / 0.04), 0 6px 20px -8px rgb(20 20 40 / 0.1);
+    --shadow-lift: 0 2px 4px rgb(20 20 40 / 0.04), 0 16px 40px -16px rgb(20 20 40 / 0.18);
+    --shadow-float: 0 8px 40px -8px rgb(45 23 105 / 0.28);
+
+    --animate-fade-up: fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+    --animate-pop-in: pop-in 0.25s cubic-bezier(0.22, 1, 0.36, 1) both;
+    --animate-shimmer: shimmer 1.6s linear infinite;
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pop-in {
+    from {
+        opacity: 0;
+        transform: scale(0.94) translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes shimmer {
+    from {
+        background-position: -200% 0;
+    }
+    to {
+        background-position: 200% 0;
+    }
+}
+
 @layer base {
     * {
         scrollbar-width: thin;
-        scrollbar-color: #312057 #dadada00;
+        scrollbar-color: var(--color-line-strong) transparent;
+    }
+
+    html {
+        -webkit-text-size-adjust: 100%;
+        /* o app é claro: evita que o navegador force controles/scrollbars escuros */
+        color-scheme: light;
+    }
+
+    body {
+        @apply bg-canvas text-ink antialiased;
+    }
+
+    h1,
+    h2,
+    h3 {
+        @apply font-display tracking-tight;
+    }
+
+    ::selection {
+        background: color-mix(in oklab, var(--color-purple-500) 35%, transparent);
     }
 }
 
-@layer theme {
-    .subtitle {
-        @apply text-xs lg:text-sm text-gray-400;
-    }
+@utility subtitle {
+    @apply text-sm text-subtle;
 }
 
-@theme {
-    --color-white: #fefcff;
-    --color-black: #262626;
+/* Cartão padrão do app — branco, borda fininha, canto generoso */
+@utility card {
+    @apply rounded-2xl border border-line bg-surface;
+}
 
-    --color-purple-500: #5d3b8c;
+@utility card-hover {
+    @apply transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-0.5 hover:border-line-strong hover:shadow-lift;
+}
 
-    --color-purple-600: #5b3580;
+/* Pill de status/categoria — fundo suave, texto na mesma família de cor */
+@utility chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-semibold;
+}
 
-    --color-purple-700: #312057;
+@utility skeleton {
+    background: linear-gradient(
+        90deg,
+        var(--color-line) 25%,
+        color-mix(in oklab, var(--color-line) 55%, white) 50%,
+        var(--color-line) 75%
+    );
+    background-size: 200% 100%;
+    animation: var(--animate-shimmer);
+    @apply rounded-lg;
+}
 
-    --text-title: clamp(1.5rem, 1rem + 1vw, 2.2rem);
-    --text-subtitle: clamp(0.8rem, 0.5rem + 0.5vw, 1rem);
+@utility focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-canvas;
 }
 
 :root {
-    --radius: 0.625rem;
+    --radius: 0.75rem;
     --background: oklch(1 0 0);
     --foreground: oklch(0.141 0.005 285.823);
     --card: oklch(1 0 0);
@@ -57,19 +190,131 @@
     --border: oklch(0.92 0.004 286.32);
     --input: oklch(0.92 0.004 286.32);
     --ring: oklch(0.705 0.015 286.067);
-    --chart-1: oklch(0.646 0.222 41.116);
-    --chart-2: oklch(0.6 0.118 184.704);
-    --chart-3: oklch(0.398 0.07 227.392);
-    --chart-4: oklch(0.828 0.189 84.429);
-    --chart-5: oklch(0.769 0.188 70.08);
-    --sidebar: oklch(0.985 0 0);
-    --sidebar-foreground: oklch(0.141 0.005 285.823);
-    --sidebar-primary: oklch(0.21 0.006 285.885);
-    --sidebar-primary-foreground: oklch(0.985 0 0);
-    --sidebar-accent: oklch(0.967 0.001 286.375);
-    --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
-    --sidebar-border: oklch(0.92 0.004 286.32);
-    --sidebar-ring: oklch(0.705 0.015 286.067);
+}
+
+
+/* ------------------------------------------------------------------ *
+ * Tema escuro — só os tokens mudam; as classes das telas continuam iguais
+ * ------------------------------------------------------------------ */
+:root[data-theme='dark'] {
+    /* Superfícies */
+    --color-canvas: #101018;
+    --color-surface: #191923;
+    --color-line: #262634;
+    --color-line-strong: #35354a;
+    --color-ink: #eeeef7;
+    --color-subtle: #a0a0ba;
+    --color-faint: #6e6e8a;
+
+    /* Marca: o fundo dos botões escurece, o tom de texto clareia */
+    --color-brand: #6a41ea;
+    --color-brand-hover: #7c5cfc;
+
+    --color-purple-50: #201a3d;
+    --color-purple-100: #29214f;
+    --color-purple-200: #352a63;
+    --color-purple-300: #4b3a86;
+    --color-purple-400: #7a5fd8;
+    --color-purple-500: #9d85ff;
+    --color-purple-600: #8b6bff;
+    --color-purple-700: #bda8ff;
+    --color-purple-900: #15102a;
+
+    /* Acentos: fundo suave escuro + texto claro, mantendo os pares -50/-700 */
+    --color-mint-50: #0e2a22;
+    --color-mint-100: #143d31;
+    --color-mint-500: #2ad9a5;
+    --color-mint-700: #6fe7c0;
+
+    --color-sun-50: #2e2210;
+    --color-sun-100: #43331a;
+    --color-sun-500: #ffbe4d;
+    --color-sun-700: #ffcf85;
+
+    --color-sky-50: #10263a;
+    --color-sky-100: #163851;
+    --color-sky-500: #5bb8ec;
+    --color-sky-700: #9ad3f5;
+
+    --color-coral-50: #331a1d;
+    --color-coral-100: #4a2529;
+    --color-coral-500: #ff8080;
+    --color-coral-700: #ffb0b0;
+
+    --shadow-soft: 0 1px 2px rgb(0 0 0 / 0.3), 0 6px 20px -8px rgb(0 0 0 / 0.5);
+    --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.3), 0 16px 40px -16px rgb(0 0 0 / 0.6);
+    --shadow-float: 0 8px 40px -8px rgb(0 0 0 / 0.65);
+
+    /* espelha os tokens do shadcn usados no reset de bordas */
+    --background: oklch(0.16 0.012 285);
+    --foreground: oklch(0.95 0.005 285);
+    --border: oklch(0.28 0.012 285);
+    --input: oklch(0.28 0.012 285);
+    --ring: oklch(0.55 0.12 290);
+    --muted: oklch(0.24 0.01 285);
+    --muted-foreground: oklch(0.7 0.015 285);
+}
+
+/* sem JS (ou antes dele), segue a preferência do sistema */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) {
+    /* Superfícies */
+    --color-canvas: #101018;
+    --color-surface: #191923;
+    --color-line: #262634;
+    --color-line-strong: #35354a;
+    --color-ink: #eeeef7;
+    --color-subtle: #a0a0ba;
+    --color-faint: #6e6e8a;
+
+    /* Marca: o fundo dos botões escurece, o tom de texto clareia */
+    --color-brand: #6a41ea;
+    --color-brand-hover: #7c5cfc;
+
+    --color-purple-50: #201a3d;
+    --color-purple-100: #29214f;
+    --color-purple-200: #352a63;
+    --color-purple-300: #4b3a86;
+    --color-purple-400: #7a5fd8;
+    --color-purple-500: #9d85ff;
+    --color-purple-600: #8b6bff;
+    --color-purple-700: #bda8ff;
+    --color-purple-900: #15102a;
+
+    /* Acentos: fundo suave escuro + texto claro, mantendo os pares -50/-700 */
+    --color-mint-50: #0e2a22;
+    --color-mint-100: #143d31;
+    --color-mint-500: #2ad9a5;
+    --color-mint-700: #6fe7c0;
+
+    --color-sun-50: #2e2210;
+    --color-sun-100: #43331a;
+    --color-sun-500: #ffbe4d;
+    --color-sun-700: #ffcf85;
+
+    --color-sky-50: #10263a;
+    --color-sky-100: #163851;
+    --color-sky-500: #5bb8ec;
+    --color-sky-700: #9ad3f5;
+
+    --color-coral-50: #331a1d;
+    --color-coral-100: #4a2529;
+    --color-coral-500: #ff8080;
+    --color-coral-700: #ffb0b0;
+
+    --shadow-soft: 0 1px 2px rgb(0 0 0 / 0.3), 0 6px 20px -8px rgb(0 0 0 / 0.5);
+    --shadow-lift: 0 2px 4px rgb(0 0 0 / 0.3), 0 16px 40px -16px rgb(0 0 0 / 0.6);
+    --shadow-float: 0 8px 40px -8px rgb(0 0 0 / 0.65);
+
+    /* espelha os tokens do shadcn usados no reset de bordas */
+    --background: oklch(0.16 0.012 285);
+    --foreground: oklch(0.95 0.005 285);
+    --border: oklch(0.28 0.012 285);
+    --input: oklch(0.28 0.012 285);
+    --ring: oklch(0.55 0.12 290);
+    --muted: oklch(0.24 0.01 285);
+    --muted-foreground: oklch(0.7 0.015 285);
+    }
 }
 
 @theme inline {
@@ -95,26 +340,10 @@
     --color-border: var(--border);
     --color-input: var(--input);
     --color-ring: var(--ring);
-    --color-chart-1: var(--chart-1);
-    --color-chart-2: var(--chart-2);
-    --color-chart-3: var(--chart-3);
-    --color-chart-4: var(--chart-4);
-    --color-chart-5: var(--chart-5);
-    --color-sidebar: var(--sidebar);
-    --color-sidebar-foreground: var(--sidebar-foreground);
-    --color-sidebar-primary: var(--sidebar-primary);
-    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-    --color-sidebar-accent: var(--sidebar-accent);
-    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-    --color-sidebar-border: var(--sidebar-border);
-    --color-sidebar-ring: var(--sidebar-ring);
 }
 
 @layer base {
     * {
         @apply border-border outline-ring/50;
-    }
-    body {
-        @apply bg-background text-foreground;
     }
 }

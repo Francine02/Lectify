@@ -1,42 +1,52 @@
+import { DEFAULT_API_ERROR, translateApiError } from '@/constants/errors/api-errors';
 import { ApiResponse } from '@/types/ApiResponse';
+import { registerBlockFromError } from '@/utils/form/rate-guard';
 import api, { BASE_URL } from './config/axios-config';
 
 export async function baseRequest<T>(
-    method: 'post' | 'put' | 'patch' | 'get' | 'delete',
-    endpoint: string,
-    data?: any,
-    config: object = {}
+  method: 'post' | 'put' | 'patch' | 'get' | 'delete',
+  endpoint: string,
+  data?: any,
+  config: object = {}
 ): Promise<ApiResponse<T>> {
-    try {
-        const response = await api({
-            method,
-            url: `${BASE_URL}${endpoint}`,
-            data,
-            ...config,
-        });
+  try {
+    const response = await api({
+      method,
+      url: `${BASE_URL}${endpoint}`,
+      data,
+      ...config,
+    });
 
-        return {
-            success: true,
-            data: response.data,
-        };
-    } catch (error: any) {
-        let errorMessage = '';
-        
-        if (error.response?.data instanceof Blob) {
-            const text = await error.response.data.text();
-            const json = JSON.parse(text);
+    return {
+      success: true,
+      status: response.status,
+      data: response.data,
+    };
+  } catch (error: any) {
+    let errorMessage = '';
 
-            errorMessage = json.error;
-        } else {
-            errorMessage = error.response?.data?.error;
-        }
-
-        return {
-            success: false,
-            error: {
-                code: error.code,
-                message: errorMessage ?? 'Ocorreu um erro! Por favor, tente novamente mais tarde',
-            },
-        };
+    // com responseType: 'blob' o corpo do erro também chega como Blob
+    if (error.response?.data instanceof Blob) {
+      try {
+        const text = await error.response.data.text();
+        errorMessage = JSON.parse(text).error;
+      } catch {
+        errorMessage = '';
+      }
+    } else {
+      errorMessage = error.response?.data?.error;
     }
+
+    // 403 de bloqueio antiabuso: guardamos até quando as ações ficam travadas
+    registerBlockFromError(errorMessage);
+
+    return {
+      success: false,
+      status: error.response?.status,
+      error: {
+        code: error.code,
+        message: errorMessage ? translateApiError(errorMessage) : DEFAULT_API_ERROR,
+      },
+    };
+  }
 }

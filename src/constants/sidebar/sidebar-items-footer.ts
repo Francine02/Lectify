@@ -1,17 +1,22 @@
+import { LogOut, Settings } from 'lucide-react';
 import { clearStorage } from '@/utils/storage/clear-storage';
-import { IoMdSettings } from 'react-icons/io';
-import { IoLogOut } from 'react-icons/io5';
+import type { LucideIcon } from 'lucide-react';
 
-export const SIDEBAR_ITEMS_FOOTER = [
+export const SIDEBAR_ITEMS_FOOTER: {
+  link: string;
+  icon: LucideIcon;
+  name: string;
+  action?: () => void;
+}[] = [
   {
     link: '/minha-conta',
-    icon: IoMdSettings,
+    icon: Settings,
     name: 'Minha conta',
   },
   {
-    link: '/',
+    link: '/login',
     action: clearStorage,
-    icon: IoLogOut,
+    icon: LogOut,
     name: 'Sair',
   },
 ];

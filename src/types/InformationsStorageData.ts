@@ -1,3 +1,5 @@
+import { PlanId } from './Plan';
+
 export interface InformationsStorageData {
   created_at?: string;
   email?: string;
@@ -6,4 +8,6 @@ export interface InformationsStorageData {
   is_free?: boolean;
   lastname?: string;
   username?: string;
+  plan?: PlanId | null;
+  subscription_end?: string | null;
 }

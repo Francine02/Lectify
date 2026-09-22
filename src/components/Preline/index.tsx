@@ -3,28 +3,34 @@
 import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 
-// Preline UI
-async function loadPreline() {
-  return import('preline/dist/index.js');
-}
-
+/**
+ * Preline só é usado pelos modais. Carregamos depois do primeiro paint para não
+ * competir com a navegação, e reinicializamos assim que a rota muda.
+ */
 export default function PrelineScript() {
   const path = usePathname();
 
   useEffect(() => {
-    const initPreline = async () => {
-      await loadPreline();
+    let cancelled = false;
+
+    const init = async () => {
+      await import('preline/dist/index.js');
+
+      if (cancelled) return;
+
+      window.HSStaticMethods?.autoInit?.();
     };
 
-    initPreline();
-  }, []);
+    const idle = window.requestIdleCallback
+      ? window.requestIdleCallback(() => init())
+      : window.setTimeout(init, 200);
 
-  useEffect(() => {
-    setTimeout(() => {
-      if (window.HSStaticMethods && typeof window.HSStaticMethods.autoInit === 'function') {
-        window.HSStaticMethods.autoInit();
-      }
-    }, 1000);
+    return () => {
+      cancelled = true;
+
+      if (window.cancelIdleCallback) window.cancelIdleCallback(idle as number);
+      else window.clearTimeout(idle as number);
+    };
   }, [path]);
 
   return null;

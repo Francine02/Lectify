@@ -1,37 +1,49 @@
 'use client';
-import Link from 'next/link';
-import { SidebarItemProps } from './SidebarItemProps';
-import { usePathname } from 'next/navigation';
+
 import { cn } from '@/utils/cn';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { SidebarItemProps } from './SidebarItemProps';
 
-export function SidebarItem({ link, icon: Icon, name, action }: SidebarItemProps) {
+export function SidebarItem({ link, icon: Icon, name, hint, action, isExpanded }: SidebarItemProps) {
   const path = usePathname();
-
-  const isActive = path === link;
-
-  const handleClick = () => {
-    if (action) action();
-  };
+  const isActive = link === '/' ? path === '/' : path.startsWith(link);
 
   return (
-    <div className="hs-tooltip relative [--placement:right] block w-full ml-[1.35rem] drop-shadow-sm">
-      <Link
-        onClick={handleClick}
-        className={cn(
-          'hs-tooltip-toggle flex h-9.5 items-center p-2 text-sm font-semibold rounded-l-lg border border-transparent text-white hover:bg-gray-100 hover:text-purple-700 focus:outline-hidden focus:bg-gray-100 focus:text-purple-700 disabled:opacity-50 disabled:pointer-events-none transition-colors',
-          isActive && 'bg-gray-100 text-purple-700'
-        )}
-        href={link}
-      >
-        <Icon className="shrink-0 size-5 text-center" />
+    <Link
+      href={link}
+      onClick={action}
+      aria-current={isActive ? 'page' : undefined}
+      title={isExpanded ? undefined : name}
+      className={cn(
+        'focus-ring relative flex h-11 items-center gap-3 rounded-2xl px-3 transition-colors duration-200',
+        isActive
+          ? 'bg-white text-purple-800 shadow-soft'
+          : 'text-white/70 hover:bg-white/15 hover:text-white'
+      )}
+    >
+      <Icon size={19} strokeWidth={2.1} className="shrink-0" />
 
-        <span
-          className="hs-tooltip-content hs-tooltip-shown:opacity-100 hs-tooltip-shown:visible opacity-0 inline-block absolute invisible z-20 py-1.5 px-2.5 bg-gray-900 text-xs text-white rounded-lg whitespace-nowrap"
-          role="tooltip"
-        >
-          {name}
-        </span>
-      </Link>
-    </div>
+      <span
+        className={cn(
+          'min-w-0 flex-1 transition-[opacity,transform] duration-200',
+          isExpanded ? 'translate-x-0 opacity-100' : 'pointer-events-none -translate-x-1 opacity-0'
+        )}
+        aria-hidden={!isExpanded}
+      >
+        <span className="block truncate text-sm font-semibold leading-tight">{name}</span>
+
+        {hint && (
+          <span
+            className={cn(
+              'block truncate text-[11px] leading-tight',
+              isActive ? 'text-purple-500' : 'text-white/45'
+            )}
+          >
+            {hint}
+          </span>
+        )}
+      </span>
+    </Link>
   );
 }

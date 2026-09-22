@@ -1,8 +1,11 @@
-import { ElementType } from 'react';
+import type { LucideIcon } from 'lucide-react';
 
 export interface SidebarItemProps {
   link: string;
-  action?: () => void;
-  icon: ElementType;
+  icon: LucideIcon;
   name: string;
+  hint?: string;
+  action?: () => void;
+  /** O rótulo só aparece quando o rail está expandido. */
+  isExpanded: boolean;
 }

@@ -1,21 +1,26 @@
-import { LuDelete } from 'react-icons/lu';
+import { FileText, X } from 'lucide-react';
 import { FileProps } from './FileProps';
 
 export function File({ text, onDelete }: FileProps) {
-    return (
-        <div className="text-gray-400 w-full max-w-96 p-5 flex justify-between items-center rounded-lg bg-gray-50 mx-auto gap-2">
-            <div className="overflow-hidden text-ellipsis whitespace-nowrap">
-                Arquivo: <span className="font-semibold text-gray-500">{text}</span>
-            </div>
+  return (
+    <div className="flex w-full items-center gap-3 rounded-2xl border border-line bg-canvas p-4">
+      <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-purple-100 text-purple-700">
+        <FileText size={18} />
+      </span>
 
-            <button
-                type="button"
-                onClick={onDelete}
-                className="text-red-500 hover:text-red-700 transition-colors cursor-pointer"
-                aria-label="Remover arquivo"
-            >
-                <LuDelete size={18} />
-            </button>
-        </div>
-    );
+      <div className="min-w-0 flex-1">
+        <p className="truncate text-sm font-semibold">{text}</p>
+        <p className="text-xs text-subtle">Pronto para gerar as questões</p>
+      </div>
+
+      <button
+        type="button"
+        onClick={onDelete}
+        className="focus-ring cursor-pointer rounded-lg p-1.5 text-faint transition-colors hover:bg-coral-50 hover:text-coral-700"
+        aria-label="Remover arquivo"
+      >
+        <X size={16} />
+      </button>
+    </div>
+  );
 }

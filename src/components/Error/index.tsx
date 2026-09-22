@@ -1,12 +1,12 @@
 import { cn } from '@/utils/cn';
+import { AlertCircle } from 'lucide-react';
 import { ErrorProps } from './ErrorProps';
-import { MdErrorOutline } from 'react-icons/md';
 
 export function Error({ text, className }: ErrorProps) {
   return (
-    <div className={cn('text-xs md:text-sm mt-2 mb-2.5 flex items-center gap-2', className)}>
-      <MdErrorOutline className="text-red-600" />
-      <p className="text-red-600">{text}</p>
-    </div>
+    <p className={cn('flex items-center gap-1.5 text-xs text-coral-700', className)}>
+      <AlertCircle size={13} className="shrink-0" />
+      {text}
+    </p>
   );
 }

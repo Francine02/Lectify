@@ -33,7 +33,7 @@ export function LoginForm() {
     }
     authStorage(result.data);
     saveInformationsInStorage(result.data.profile);
-    router.push('/minha-conta');
+    router.push('/');
   };
 
   return (

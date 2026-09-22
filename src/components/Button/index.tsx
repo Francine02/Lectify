@@ -8,15 +8,15 @@ export function Button({ children, isLoading, className, ...props }: ButtonProps
       aria-busy={isLoading}
       disabled={isLoading || props.disabled}
       className={cn(
-        'w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg border border-transparent transition text-white',
+        'focus-ring inline-flex w-full items-center justify-center gap-x-2 rounded-xl px-4 py-3 text-sm font-bold text-white transition-colors',
         isLoading || props.disabled
-          ? 'bg-gray-400 focus:bg-gray-400 cursor-not-allowed opacity-70'
-          : 'bg-purple-700 hover:opacity-90 focus:brightness-110 cursor-pointer focus:outline-hidden',
+          ? 'cursor-not-allowed bg-line-strong text-white/80'
+          : 'cursor-pointer bg-brand hover:bg-brand-hover',
         className
       )}
       {...props}
     >
-      {isLoading ? <Loading /> : children}
+      {isLoading ? <Loading className="size-5 text-current" /> : children}
     </button>
   );
 }

@@ -1,14 +1,29 @@
+import { AppearanceCard } from '@/components/MyAccount/AppearanceCard';
+import { ProfileHeader } from '@/components/MyAccount/ProfileHeader';
+import { SubscriptionCard } from '@/components/MyAccount/SubscriptionCard';
+import { UsagePanel } from '@/components/Usage/UsagePanel';
 import { Metadata } from 'next';
 import { MyAccountForm } from './form';
 
 export const metadata: Metadata = {
-  title: 'Minha conta | Lectify',
-  description: 'Acesse sua conta para para alterar as informações de perfil',
+  title: 'Meu perfil',
+  description: 'Acesse sua conta para alterar as informações de perfil.',
   robots: { index: false, follow: false },
 };
 
-function MyAccount() {
-  return <MyAccountForm />;
-}
+export default function MyAccount() {
+  return (
+    <div className="space-y-4">
+      <ProfileHeader />
 
-export default MyAccount;
+      <div className="grid items-start gap-4 lg:grid-cols-2">
+        <SubscriptionCard />
+        <UsagePanel />
+      </div>
+
+      <AppearanceCard />
+
+      <MyAccountForm />
+    </div>
+  );
+}

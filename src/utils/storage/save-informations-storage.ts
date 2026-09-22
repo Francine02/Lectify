@@ -1,21 +1,18 @@
+import { STORAGE_KEYS } from '@/constants/storage/storage-keys';
 import { InformationsStorageData } from '@/types/InformationsStorageData';
 import Cookies from 'js-cookie';
 
-const mapKeys: Record<keyof InformationsStorageData, string> = {
-  created_at: 'created',
-  email: 'email',
-  firstname: 'firstname',
-  image_profile: 'image',
-  is_free: 'isFree',
-  lastname: 'lastname',
-  username: 'username',
-};
-
 export const saveInformationsInStorage = (data: InformationsStorageData) => {
   Object.entries(data).forEach(([key, value]) => {
-    const mappedKey = mapKeys[key as keyof InformationsStorageData];
+    const mappedKey = STORAGE_KEYS[key as keyof InformationsStorageData];
 
-    if (mappedKey && value != null)
-      Cookies.set(mappedKey, String(value) ?? '', { path: '/', expires: 7 });
+    if (!mappedKey) return;
+
+    if (value == null) {
+      Cookies.remove(mappedKey, { path: '/' });
+      return;
+    }
+
+    Cookies.set(mappedKey, String(value), { path: '/', expires: 7 });
   });
 };
